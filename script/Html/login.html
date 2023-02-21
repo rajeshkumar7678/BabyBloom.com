@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #login-box {
+        margin: 40px auto;
+        width: 22%;
+
+    }
+
+    #logo {
+        margin: auto;
+        width: 10%;
+        margin: 23px auto 0;
+    }
+
+    .big-text {
+        font-size: 18px;
+        line-height: 25px;
+        color: #424242;
+        font-weight: 550;
+        margin: 10px 0;
+    }
+
+    .small {
+        font-size: 14px;
+    }
+
+    .inp {
+        border: none;
+        height: 30px;
+        margin: 5px 0;
+        border-bottom: 1px solid #a6a6a6;
+        width: 100%;
+        font-weight: 400;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    #btn button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        color: white;
+        background-color: #ff7043;
+        border: none;
+        height: 34px;
+        padding: 10px 0;
+        border-radius: 3px;
+        padding-bottom: 30px;
+        cursor: pointer;
+    }
+
+    #btn {
+        margin-top: 30px;
+    }
+
+    hr {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .box {
+        border: 1px solid #cccccc;
+    }
+
+    .box img {
+        width: 8%;
+        margin-left: 30px;
+        margin-right: 10px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .small-text {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .blue {
+        color: #2979ff;
+        font-weight: 550;
+    }
+
+    .small-text a {
+        text-decoration: none;
+        color: #2979ff;
+    }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+<body>
+
+    <div id="logo">
+        <a href="index.html">
+            <img src="" alt="">
+        </a>
+    </div>
+    <div id="login-box">
+        <div class="big-text">Login / Register</div>
+        <div class="big-text small">Email ID/Mobile No.</div>
+        <div>
+            <input class="big-text small inp" id="email" type="text" placeholder="Enter your Email ID or Mobile No.">
+        </div>
+        <div class="big-text small">Password.</div>
+        <div>
+            <input class="big-text small inp" id="password" type="password" placeholder="Enter your Password.">
+        </div>
+        <div id="btn">
+            <button class="big-text small" onclick="checkcredentials()">CONTINUE</button>
+        </div>
+        <div>
+            <hr>
+        </div>
+        <div>
+            <div class="box big-text small">
+                <img src="https://cdn.fcglcdn.com/brainbees/images/n/login-signup-facebook.png" alt="">FACEBOOK
+            </div>
+        </div>
+        <div>
+            <div class="box big-text small">
+                <img src="https://cdn.fcglcdn.com/brainbees/images/n/login-signup-gmail.png" alt="">GOOGLE
+            </div>
+        </div>
+        <div class="center small-text blue">New to BabyBloom? <a href="signin.html">Register Here</a></div>
+        <hr>
+        <div class="small-text">By continuing, you agree to BabyBloom's <span class="blue">Conditions of
+                use</span>and<span class="blue">Privacy Notice.</span></div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script src=""></script>
