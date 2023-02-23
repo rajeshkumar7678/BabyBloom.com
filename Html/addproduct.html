@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Add Product </title>
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      background-color: #eeeeee;
+    }
+
+    nav {
+      width: 100%;
+      /* height: 50px; */
+      height: 3.125rem;
+      background: rgba(153, 155, 40, 0);
+      background-color: RGB(255 217 28);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: rgb(46, 29, 29);
+      /* font-size: 20px; */
+      font-size: 1.25rem;
+      font-weight: bolder;
+      height: 100%;
+      padding: 0px 30px 0px 30px;
+      padding: 0px 30px 0px 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    nav img {
+
+      width: 12.5rem;
+      /* width: 200px; */
+      /* height: 50px; */
+      height: 3.125rem
+    }
+
+
+    h2 {
+
+      /* margin-top: 10px; */
+      /* margin-bottom: 5px; */
+      margin-top: 0.625rem;
+      margin-bottom: 5px;
+    }
+
+    form {
+      box-shadow: 0 0 12px 6px rgb(0 0 0 / 5%), 0 3px 6px rgb(0 0 0 / 15%);
+      width: 50%;
+
+      text-align: left;
+      margin: auto;
+      background: #fff;
+      /* padding: 20px; */
+      /* border-radius: 5px; */
+      padding: 1.25rem;
+      /* border-radius: 5px; */
+      border-radius: 0.313rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    #main,
+    #price {
+      border: dotted 1px;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      /* font-size: 15px;
+      border-radius: 4px;
+      padding: 10px; */
+      font-size: 0.938rem;
+      border-radius: 0.25rem;
+      padding: 0.625rem;
+    }
+
+    #sub,
+    #color {
+      border: dotted 1px;
+      grid-column-start: 4;
+      grid-column-end: 6;
+      /* font-size: 15px;
+      border-radius: 4px;
+      padding: 10px; */
+      font-size: 0.938rem;
+      border-radius: 0.25rem;
+      padding: 0.625rem;
+    }
+
+    #img1,
+    #img2,
+    #img3,
+    #img4,
+    #des,
+    #name {
+      border: dotted 1px;
+      grid-column-start: 1;
+      grid-column-end: 6;
+      /* font-size: 15px;
+      border-radius: 4px;
+      padding: 10px; */
+      font-size: 0.938rem;
+      border-radius: 0.25rem;
+      padding: 0.625rem;
+    }
+
+    button {
+      grid-column-start: 2;
+      grid-column-end: 5;
+      padding: 0.625rem;
+      color: white;
+      font-weight: bolder;
+      border-radius: 0.25rem;
+      background: rgb(255, 112, 67);
+      border: none;
+
+    }
+
+    button:hover {
+      cursor: pointer;
+      background: rgb(249, 130, 94);
+    }
+
+    .swal-text {
+      font-size: 1.25rem;
+      font-weight: bolder;
+    }
+
+    nav img {
+      /* border: 3px solid darkblue; */
+      width: 10%;
+    }
+
+    /* input {
+      background: #eeeeee;
+    } */
+
+    /* input:focus {
+      background: #ffffff;
+      ;
+    } */
+
+    .swal-button {
+      background-color: #0025ff;
+    }
+
+
+    @media screen and (min-width:0px) and (max-width:400px) {
+      form {
+        /* width: 300px; */
+        width: 18.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="admin.html">Back to Home</a>
+    <img src="/image/logo.png" alt="">
+    <a href="">Back to BabyGloom</a>
+
+
+  </nav>
+  <marquee behavior="" scrollamount="10">
+    <h2>Please Fill Product Details ...</h2>
+  </marquee>
+  <form method="post" name="google-sheet">
+    <input type="text" name="Title" placeholder="Title of Product..." id="name" />
+    <input type="number" name="Price" placeholder="Price of a Product..." id="price" />
+    <select name="Color" id="color">
+      <option value="">Color</option>
+      <option value="Navy">Navy</option>
+      <option value="Multi-colored">Multi-colored</option>
+      <option value="Grey">Grey</option>
+      <option value="Beige">Beige</option>
+      <option value="Black">Black</option>
+      <option value="Blue">Blue</option>
+      <option value="Brown">Brown</option>
+      <option value="Burgundy">Burgundy</option>
+      <option value="Coral">Coral</option>
+      <option value="Cream">Cream</option>
+      <option value="Green">Green</option>
+      <option value="Khaki">Khaki</option>
+      <option value="Maroon">Maroon</option>
+      <option value="Olive">Olive</option>
+      <option value="Orange">Orange</option>
+      <option value="Peach">Peach</option>
+      <option value="Pink">Pink</option>
+      <option value="Purple">Purple</option>
+      <option value="Red">Red</option>
+      <option value="Tan">Tan</option>
+      <option value="White">White</option>
+      <option value="Yellow">Yellow</option>
+    </select>
+    <input type="text" name="Image1" placeholder=" 1st Image URL here..." id="img1" />
+    <input type="text" name="Image2" placeholder=" 2st Image URL here..." id="img2" />
+    <input type="text" name="Image3" placeholder=" 3st Image URL here..." id="img3" />
+    <input type="text" name="Image4" placeholder=" 4st Image URL here..." id="img4" />
+    <select name="MainCategory" id="main">
+      <option value="">MainCategory</option>
+      <option value="Boy">Boy</option>
+      <option value="Girl">Girl</option>
+      <option value="WinterWear">WinterWear</option>
+    </select>
+    <select name="SubCategory" id="sub">
+      <option value="">SubCategory</option>
+      <option value="T-Shirt">T-Shirt</option>
+      <option value="Tops">Tops</option>
+      <option value="Jeans">Jeans</option>
+      <option value="Belts">Belts</option>
+      <option value="Hats">Hats</option>
+      <option value="Hoodies">Hoodies</option>
+      <option value="Jackets">Jackets</option>
+      <option value="Shirts">Shirts</option>
+      <option value="Shorts">Shorts</option>
+      <option value="Sweaters">Sweaters</option>
+      <option value="Underwear">Underwear</option>
+      <option value="Wallets">Wallets</option>
+      <option value="Bags">Bags</option>
+      <option value="Jewelry">Jewelry</option>
+      <option value="Mask">Mask</option>
+      <option value="Shoes">Shoes</option>
+      <option value="Sunglasses">Sunglasses</option>
+      <option value="TomGirl">TomGirl</option>
+    </select>
+    <input type="text" name="Description" placeholder="Small Description about Product..." id="des" />
+    <button type="submit" id="btn" name="submit">ADD TO SITE</button>
+  </form>
+</body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+  const form = document.forms["google-sheet"];
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (
+      form.name.value != "" &&
+      form.price.value != "" &&
+      form.color.value != "" &&
+      form.img1.value != "" &&
+      form.img2.value != "" &&
+      form.img3.value != "" &&
+      form.img4.value != "" &&
+      form.main.value != "" &&
+      form.sub.value != "" &&
+      form.des.value != ""
+    ) {
+
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      var requestOptions = {
+        method: "post",
+        headers: myHeaders,
+        redirect: "follow",
+        body: JSON.stringify([[form.name.value, form.price.value, form.color.value, form.img1.value, form.img2.value, form.img3.value, form.img4.value, form.main.value, form.sub.value, form.des.value]])
+      };
+
+      fetch("https://v1.nocodeapi.com/rajeshkumar7678/google_sheets/yUJreEUVCwZpGtpW?tabId=Sheet1", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+      swal("Product added to Site...");
+    } else {
+      swal("Please Provide Complete Information....!");
+    }
+
+  });
+
+</script>
+
+</html>
