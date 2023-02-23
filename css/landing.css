@@ -69,6 +69,9 @@ width:15%
       cursor: pointer;
       text-decoration: underline;
   }
+  .shortlist>div:nth-child(2)>img{
+    width: 100px
+  }
 
   select, option {
       border: none;
@@ -280,7 +283,7 @@ width:15%
  .infant{
     width:90%;
     height:120px;
-    border:1px solid red;
+    /* border:1px solid red; */
     margin:auto;
     margin-top: 10%;
  } 
@@ -290,17 +293,159 @@ width:15%
  #infant-pic{
     width:90%;
     height:350px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin:auto;
     display: flex;
  }
  #infant-pic>div{
     width:210px;
     height:250px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin:auto;
     border-radius: 90px;
  }
  #infant-pic>div>img{
     width: 80%;
+    margin-left: 10px;
  }
+ .age{
+    width:90%;
+    height:120px;
+    /* border: 1px solid red; */
+    margin:auto
+ }
+ .age>img{
+    width:100%
+ }
+ .age-pic{
+    width:90%;
+    height:150px;
+    margin:auto;
+    /* border:1px solid red; */
+    margin-top:10px;
+    display: flex;
+
+ }
+ .age-pic>div{
+    width:110px;
+    height:90px;
+    /* border: 1px solid red; */
+    /* margin:auto; */
+    margin:auto
+ }
+.age-pic>div>img{
+    width:100%;
+    /* height:100px */
+ }
+ .belove{
+    width:90%;
+    height:120px;
+    /* border: 1px solid red; */
+    margin:auto
+ }
+ .belove>img{
+    width: 100%;
+ }
+ .brand{
+    width:90%;
+    height:330px;
+    /* border: 1px solid red; */
+    margin:auto;
+    margin-top:70px;
+    /* display:flex */
+    
+
+ }
+ .brand{ 
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    gap: 2px;
+ }
+ 
+ .brand>div{
+    width:130px;
+    height:80px;
+    /* border: 1px solid red; */
+    /* margin:auto */
+    border-radius: 5px;
+    /* background-color: rgb(247, 245, 245); */
+}  
+.brand>div>img{
+    width: 90%;
+}
+ #elegant{
+    width:90%;
+    height:120px;
+    /* border: 1px solid red; */
+    margin:auto
+ }
+ #elegant>img{
+    width:100%;
+ }
+ .elegant-pic{
+    width:90%;
+    height:500px;
+    /* border: 1px solid red; */
+    margin:auto;
+    /* margin-top: 50px; */
+    display:flex
+ }
+ .elegant-pic>div>img{
+    width:100%
+ }
+ .acc{
+    width:90%;
+    height:120px;
+    /* border: 1px solid red; */
+    margin:auto
+ }
+ .acc>img{
+    width: 100%;
+ }
+ 
+#just{
+    width:90%;
+    height:120px;
+    /* border: 1px solid red; */
+    margin:auto;
+    display: flex;
+
+}
+#just>div{
+    width: 120px;
+    height:80px;
+    /* border: 1px solid red; */
+    margin-bottom: 20px;
+    
+}
+#just>div:nth-child(4){
+    margin-right: 110px;
+}
+#just>div>img{
+    width: 120%;
+}
+#Baby{
+    width: 90%;
+    height: 150px;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 40px;
+}
+#Baby>img{
+    width:100%
+}
+#diaper{
+    width:90%;
+    height: 80px;
+    margin:auto;
+    /* border: 1px solid red; */
+    margin-top: 70px;
+    
+}
+#diaper img{
+    width:100%
+}
+#diaper>div{
+
+}
+
