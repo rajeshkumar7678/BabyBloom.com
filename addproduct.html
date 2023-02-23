@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin - Add Product </title>
+    <title>Admin - Add Product To Site...</title>
     
-    
+    <link rel="stylesheet" href="scroll.css">
     <style>
       * {
         margin: 0;
@@ -14,18 +14,21 @@
       }
       body {
         width: 100%;
-        background-image: url("/image/img2.jpg");
+        background-color: beige;
+      }
+      #logo{
+        text-align: center;
+        
+      }
+      #logo img{
+        
+        width: 200px;
       }
       nav {
         width: 100%;
         height: 50px;
-        background: rgba(153, 155, 40, 0);
-        background: linear-gradient(
-          90deg,
-          rgb(224, 248, 11) 0%,
-          rgb(193, 206, 9) 49%,
-          rgb(231, 201, 31) 100%
-        );
+        background: #ffd91c;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         display: flex;
         justify-content: space-between;
       }
@@ -39,12 +42,7 @@
         display: flex;
         align-items: center;
       }
-      nav img{
-        
-        width: 200px;
-        height: 50px;
-        
-      }
+      
       
       
       h2 {
@@ -105,7 +103,8 @@
         color: white;
         font-weight: bolder;
         border-radius: 20px;
-        background: rgb(15, 15, 15);
+        background: rgb(243, 125, 56);
+        border: none;
         
        
       }
@@ -126,12 +125,14 @@
     </style>
   </head>
   <body>
+    <div id="logo">
+      <img src="/image/IMG_20230223_200955.png" alt="">
+    </div>
     <nav>
         <a href="admin.html">Back to Home</a>
-        <img src="/image/logoadmin.png" alt="">
-        <a href="">Back to BabyGloom</a>
-      
-      
+        
+        <a href="">Back to BabyBloom</a>
+         
     </nav>
     <marquee behavior="" scrollamount="10"> <h2>Please Fill Product Details ...</h2></marquee>
     <form method="post" name="google-sheet">
