@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/signin.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<style>
+    /* #signin-box {
+        border: 2px solid black;
+    }
+
+    #name {
+        border: 2px solid darkblue;
+    } */
+</style>
+
+<body>
+    <div id="logo">
+        <a href="../index.html">
+            <img src="/image/logo.png" alt="">
+        </a>
+    </div>
+    <div id="signin-box">
+        <div class="big-text">Register</div>
+        <div class="big-text small">Full Name</div>
+        <div>
+            <input class="big-text small inp" id="name" type="text" placeholder="Enter your Full Name">
+        </div>
+        <div class="big-text small">Mobile Number</div>
+        <div>
+            <input class="big-text small inp" id="mobile" type="text" placeholder="Enter your Mobile Number">
+        </div>
+        <div class="big-text small">Email ID</div>
+        <div>
+            <input class="big-text small inp" id="email" type="text" placeholder="Enter your Email ID">
+        </div>
+        <div class="big-text small">Password</div>
+        <div>
+            <input class="big-text small inp" id="password" type="password" placeholder="Enter your Password">
+        </div>
+        <div id="btn">
+            <button class="big-text small" onclick="storeDetails()">CONTINUE</button>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+
+
+    function storeDetails() {
+        let name = document.getElementById("name").value;
+        let mobile = document.getElementById("mobile").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        if (name.length == 0 || mobile.length == 0 || email.length == 0 || password.length == 0) {
+            alert("please fill all the details");
+
+            return
+        }
+
+        window.location.href = "login.html";
+
+        let location = {
+            name,
+            mobile,
+            email,
+            password,
+        };
+
+        let arr = localStorage.getItem("login-details");
+
+        if (arr == null) {
+            arr = [];
+        }
+        else {
+            arr = JSON.parse(localStorage.getItem("login-details"));
+        }
+
+        arr.push(location);
+        localStorage.setItem("login-details", JSON.stringify(arr));
+
+        document.getElementById("name").value = null;
+        document.getElementById("mobile").value = null;
+        document.getElementById("email").value = null;
+        document.getElementById("password").value
+
+    }
+</script>
