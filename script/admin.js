@@ -1,5 +1,8 @@
 
 var main=document.getElementById("main1")
+var sortbyprice=document.getElementById("sortbyprice")
+var sortbycategory=document.getElementById("sortbycategory")
+var data1;
 
 function fetchdata(){
     var myHeaders = new Headers();
@@ -16,6 +19,7 @@ function fetchdata(){
         .then((result) =>{
             console.log(result.data)
             display(result.data)
+            data1=result.data
         })
         .catch(error => console.log('error', error));
 }
@@ -42,7 +46,7 @@ function display(data){
        var btn1=document.createElement("buttom");
        btn1.innerText="Update"
        btn1.addEventListener("click",()=>{
-        updatedata(element.row_id)
+        updatedata(element)
        })
 
        var btn2=document.createElement("buttom");
@@ -52,12 +56,6 @@ function display(data){
         //console.log(element.row_id)
        })
 
-
-
-
-
-
-
        btn.append(btn1,btn2)
        card.append(image,title,price,btn)
        main.append(card)
@@ -66,8 +64,8 @@ function display(data){
    
 }
 
-function updatedata(id){
-
+function updatedata(element){
+    console.log(element)
 }
 
 function deletedata(id){
@@ -89,6 +87,35 @@ function deletedata(id){
     
     
 }
+
+//filter-----------------------------------------------------------------------------------
+sortbyprice.addEventListener("change",()=>{
+    
+    if(sortbyprice.value == "lowtohigh"){
+        let arr = data1.sort((a,b)=>a.price-b.price);
+        display(arr)
+    }else if(sortbyprice.value == "hightolow"){
+        let arr = data1.sort((a,b)=>b.price-a.price);
+        display(arr)
+    }
+})
+
+
+sortbycategory.addEventListener("change",()=>{
+    if(sortbycategory.value==""){
+        display(data1)
+    }else{
+    let filtered=data1.filter((ele)=>{
+        if(sortbycategory.value==ele.subcat){
+            return true
+        }else{
+            return false
+        }
+    })
+    display(filtered)
+    }
+    
+})
 
 
 
