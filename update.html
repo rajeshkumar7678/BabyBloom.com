@@ -126,7 +126,7 @@
   </head>
   <body>
     <div id="logo">
-      <img src="/image/IMG_20230223_200955.png" alt="">
+      <img src="IMG_20230223_200955.png" alt="">
     </div>
     <nav>
         <a href="admin.html">Back to Home</a>
@@ -134,12 +134,12 @@
         <a href="">Back to BabyBloom</a>
          
     </nav>
-    <marquee behavior="" scrollamount="10"> <h2>Please Fill Product Details ...</h2></marquee>
+    <marquee behavior="" scrollamount="10"> <h2>update your data here ...</h2></marquee>
     <form method="post" name="google-sheet">
       <input
         type="text"
         name="Title"
-        placeholder="Title of Product..."
+        
         id="name"
       />
       <input
@@ -208,14 +208,14 @@
         <option value="T-Shirt">T-Shirt</option>
         <option value="Tops">Tops</option>
         <option value="Jeans">Jeans</option>
-        <option value="Tshirt & Short">Tshirt & short</option>
-        <option value="bath soap">bath soap</option>
+        <option value="Belts">Belts</option>
+        <option value="Hats">Hats</option>
         <option value="Hoodies">Hoodies</option>
         <option value="Jackets">Jackets</option>
         <option value="Shirts">Shirts</option>
         <option value="Shorts">Shorts</option>
         <option value="Sweaters">Sweaters</option>
-        <option value="kurtha">kurtha</option>
+        <option value="Underwear">Underwear</option>
         <option value="Wallets">Wallets</option>
         <option value="Bags">Bags</option>
         <option value="Jewelry">Jewelry</option>
@@ -230,13 +230,22 @@
         placeholder="Small Description about Product..."
         id="des"
       />
-      <button type="submit" id="btn" name="submit">ADD to SITE</button>
+      <button type="submit" id="btn" name="submit">UPDATE to SITE</button>
     </form>
   </body>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   
   <script>
     const form = document.forms["google-sheet"];
+    var data=JSON.parse(localStorage.getItem("updatedata"))||[]
+    console.log(data)
+    form.name.value = data[0].name;
+    form.color.value = data[0].color
+    form.img1.value = data[0].image1
+    form.img2.value = data[0].image2 
+    form.img3.value = data[0].image3
+    form.img4.value = data[0].image4
+    form.des.value = data[0].description
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (
@@ -251,26 +260,28 @@
         form.sub.value != "" &&
         form.des.value != ""
       ) {
-        
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         var requestOptions = {
-        method: "post",
+        method: "put",
         headers: myHeaders,
         redirect: "follow",
-        body: JSON.stringify([[form.name.value,form.price.value,form.color.value,form.img1.value,form.img2.value,form.img3.value,form.img4.value,form.main.value,form.sub.value,form.des.value]])
+        body: JSON.stringify({"row_id":+data[0].row_id,"name":"NoCodeAPI v2","email":"hello@nocodeapi.com"})
         };
 
         fetch("https://v1.nocodeapi.com/rajeshkumar7678/google_sheets/yUJreEUVCwZpGtpW?tabId=Sheet1", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
+        
         swal("Product added to Site...");
         }else {
         swal("Please Provide Complete Information....!");
       }
       
     });
+
+    
    
   </script>
 </html>
