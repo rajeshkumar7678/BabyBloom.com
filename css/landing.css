@@ -36,6 +36,7 @@
     border-radius: 0.188rem;
     border: 1px solid rgb(238, 238, 238);
     margin-left: -30%;
+
 }
 
 #searchpng {
@@ -238,7 +239,7 @@ img {
     background-color: #717171;
 }
 
-.center-quote {
+<<<<<<< HEAD .center-quote {
     padding-top: 5%;
     width: 80%;
     margin: auto;

@@ -46,6 +46,7 @@ btn.addEventListener(("click"), ()=>{
                 popup: 'animate__animated animate__fadeOutUp'
                 }
                 })
+                show.style.display = "flex";
         }
         else if(mobnumpop.value.length != 10){
             // console.log(mobnumpop.value.length);
@@ -60,16 +61,17 @@ btn.addEventListener(("click"), ()=>{
                 })
         }
         else{
-            show.style.display="none";
+            // show.style.display="none";
             Swal.fire({
                 title: 'Address Successfully Saved...',
                 showClass: {
                 popup: 'animate__animated animate__fadeInDown'
                 },
                 hideClass: {
-                popup: 'animate__animated animate__fadeOutUp'
+                popup: 'animate__animated animate__fadeOutUp',
                 }
             })
+            show.style.display="none";
             let obj = {
                 pincpdepop:pincpdepop.value,
                 fnamepop:fnamepop.value,
@@ -78,12 +80,141 @@ btn.addEventListener(("click"), ()=>{
                 addln1pop:addln1pop.value,
                 landMpop:landMpop.value,
                 citypop:citypop.value,
-                statepop:statepop
+                statepop:statepop.value
             }
-            localStorage.setItem("shippingAddress".JSON.stringify(obj));
+            localStorage.setItem("shippingAddress",JSON.stringify(obj));
             let Addressofshipping = JSON.parse(localStorage.getItem("shippingAddress"))||[];
-            console
+            // console.log(Addressofshipping);
+            let timetohideshippingbtn = document.getElementById("btun");
             appendaddress.style.display="block"
+            timetohideshippingbtn.style.display="none";
+            let addName = document.getElementById("addName");
+            let addline1 = document.getElementById("addline1");
+            let addlandmark = document.getElementById("addlandmark");
+            let addstate = document.getElementById("addstate");
+            let mobCity = document.getElementById("mobCity");
+            let mopPincode = document.getElementById("mopPincode");
+            let addMob = document.getElementById("addMob");
+            let buttonaddress = document.getElementById("button-address");
+            addName.innerText = "Full Name :- "+Addressofshipping.fnamepop+" "+Addressofshipping.lnamepop;
+            addline1.innerText = "Add-line 1 :- "+Addressofshipping.addln1pop;
+            addlandmark.innerText= "Land-Mark :- "+Addressofshipping.landMpop;
+            addstate.innerText="State :- "+Addressofshipping.statepop;
+            mobCity.innerText="City :- "+Addressofshipping.citypop;
+            mopPincode.innerText="Pincode :- "+Addressofshipping.pincpdepop
+            addMob.innerText=Addressofshipping.mobnumpop;
+            buttonaddress.addEventListener("click",()=>{
+                let Selectpayment = document.querySelector(".Select-payment");
+                Selectpayment.style.display="block";
+            })
+            let cod = document.getElementById("cod");
+let cdc = document.getElementById("cdc");
+cod.addEventListener("click",()=>{
+    let Selectpayment = document.querySelector(".Select-payment");
+    let appendaddress = document.getElementById("append-address");
+    let btun = document.getElementById("btun");
+    let totalAmt = document.getElementById("totalAmt").innerText;
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: `Your order of ${totalAmt} has successfully placed...`,
+        showConfirmButton: false,
+        timer: 3000
+      })
+      setTimeout(() => {
+        appendaddress.style.display="none";
+        Selectpayment.style.display="none";
+        btun.style.display="flex";  
+        
+        
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 20000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'success',
+            title: 'Your Product will be delivered by monday'
+          })
+          window.scrollTo(0, 0);
+      }, 2500);
+})
+cdc.addEventListener("click",()=>{
+  let something = document.getElementById("credit-debit-payment");
+  something.style.display="grid";
+  let paybutton = document.getElementById("paybutton");
+  paybutton.addEventListener("click",()=>{
+    let numbercard = document.getElementById("number-card");
+    let datepayment = document.getElementById("date-payment");
+    let CVVpayment = document.getElementById("CVV-payment");
+    if(numbercard.value == ""|| datepayment.value == "" ||CVVpayment.value==""){
+        Swal.fire({
+            title: 'Incomplete information...',
+            showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__fadeOutUp',
+            }
+        })
+    }
+    else if(CVVpayment.value.length !=3){
+        Swal.fire({
+            title: 'Incorrect CVV ...',
+            showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+            popup: 'animate__animated animate__fadeOutUp',
+            }
+        })
+    }
+    else{
+        let Selectpayment = document.querySelector(".Select-payment");
+        let appendaddress = document.getElementById("append-address");
+        let btun = document.getElementById("btun");
+        let totalAmt = document.getElementById("totalAmt").innerText;
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `Your order of ${totalAmt} has successfully placed...`,
+            showConfirmButton: false,
+            timer: 3000
+          })
+          setTimeout(() => {
+            appendaddress.style.display="none";
+            Selectpayment.style.display="none";
+            btun.style.display="flex";  
+            
+            
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 20000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'success',
+                title: 'Your Product will be delivered by monday'
+              })
+              window.scrollTo(0, 0);
+          }, 2500);
+    }  
+  })
+})
         }
 
     })
@@ -91,7 +222,6 @@ btn.addEventListener(("click"), ()=>{
 close.addEventListener("click", ()=>{
     show.style.display="none";
 })
-
 let userDataURL = `https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI/`
 
 let loginStatus = JSON.parse(localStorage.getItem("loginstatus"))  || null ;
@@ -104,10 +234,10 @@ window.addEventListener("load",()=>{
     if( loginStatus===null || loginStatus.status===false){
         
         // console.log(loginStatus.status)
-        bodydiv.style.display = "none"
+        //bodydiv.style.display = "none"
         
         // console.log( typeof noprod)
-        noprod.innerText = "Please Login First" ; 
+       // noprod.innerText = "Please Login First" ; 
         // console.log(bodydiv)
     }else{
         // console.log("HEEH")
@@ -119,8 +249,9 @@ window.addEventListener("load",()=>{
         })
         .then((data)=>{
             let ourCart = data.cart ; 
-            console.log(ourCart)
+            // console.log(ourCart)
             if(ourCart.length === 0){
+
                 bodydiv.style.display = "none"
                 noprod.innerText = "No Products in cart" ;
             }else{

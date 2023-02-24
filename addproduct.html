@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin - Add Product </title>
+  <title>Admin - Add Product To Site...</title>
 
-
+  <link rel="stylesheet" href="scroll.css">
   <style>
     * {
       margin: 0;
@@ -16,15 +16,24 @@
 
     body {
       width: 100%;
-      background-color: #eeeeee;
+      background-color: beige;
+    }
+
+    #logo {
+      text-align: center;
+
+    }
+
+    #logo img {
+
+      width: 200px;
     }
 
     nav {
       width: 100%;
-      /* height: 50px; */
-      height: 3.125rem;
-      background: rgba(153, 155, 40, 0);
-      background-color: RGB(255 217 28);
+      height: 50px;
+      background: #ffd91c;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
       display: flex;
       justify-content: space-between;
     }
@@ -32,49 +41,36 @@
     nav a {
       text-decoration: none;
       color: rgb(46, 29, 29);
-      /* font-size: 20px; */
-      font-size: 1.25rem;
+      font-size: 20px;
       font-weight: bolder;
       height: 100%;
-      padding: 0px 30px 0px 30px;
       padding: 0px 30px 0px 30px;
       display: flex;
       align-items: center;
     }
 
-    nav img {
-
-      width: 12.5rem;
-      /* width: 200px; */
-      /* height: 50px; */
-      height: 3.125rem
-    }
 
 
     h2 {
 
-      /* margin-top: 10px; */
-      /* margin-bottom: 5px; */
-      margin-top: 0.625rem;
+      margin-top: 10px;
       margin-bottom: 5px;
     }
 
     form {
-      box-shadow: 0 0 12px 6px rgb(0 0 0 / 5%), 0 3px 6px rgb(0 0 0 / 15%);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       width: 50%;
 
       text-align: left;
       margin: auto;
-      background: #fff;
-      /* padding: 20px; */
-      /* border-radius: 5px; */
-      padding: 1.25rem;
-      /* border-radius: 5px; */
-      border-radius: 0.313rem;
+      background-color: rgba(241, 216, 216, 0.43);
+      padding: 20px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 2.5rem;
+      gap: 20px;
+      margin-bottom: 40px;
     }
 
     #main,
@@ -82,12 +78,9 @@
       border: dotted 1px;
       grid-column-start: 1;
       grid-column-end: 3;
-      /* font-size: 15px;
-      border-radius: 4px;
-      padding: 10px; */
-      font-size: 0.938rem;
-      border-radius: 0.25rem;
-      padding: 0.625rem;
+      font-size: 15px;
+      border-radius: 20px;
+      padding: 10px;
     }
 
     #sub,
@@ -95,12 +88,9 @@
       border: dotted 1px;
       grid-column-start: 4;
       grid-column-end: 6;
-      /* font-size: 15px;
-      border-radius: 4px;
-      padding: 10px; */
-      font-size: 0.938rem;
-      border-radius: 0.25rem;
-      padding: 0.625rem;
+      font-size: 15px;
+      border-radius: 20px;
+      padding: 10px;
     }
 
     #img1,
@@ -112,49 +102,28 @@
       border: dotted 1px;
       grid-column-start: 1;
       grid-column-end: 6;
-      /* font-size: 15px;
-      border-radius: 4px;
-      padding: 10px; */
-      font-size: 0.938rem;
-      border-radius: 0.25rem;
-      padding: 0.625rem;
+      font-size: 15px;
+      border-radius: 20px;
+      padding: 10px;
     }
 
     button {
       grid-column-start: 2;
       grid-column-end: 5;
-      padding: 0.625rem;
+      padding: 10px;
       color: white;
       font-weight: bolder;
-      border-radius: 0.25rem;
-      background: rgb(255, 112, 67);
+      border-radius: 20px;
+      background: rgb(243, 125, 56);
       border: none;
 
-    }
 
-    button:hover {
-      cursor: pointer;
-      background: rgb(249, 130, 94);
     }
 
     .swal-text {
-      font-size: 1.25rem;
+      font-size: 20px;
       font-weight: bolder;
     }
-
-    nav img {
-      /* border: 3px solid darkblue; */
-      width: 10%;
-    }
-
-    /* input {
-      background: #eeeeee;
-    } */
-
-    /* input:focus {
-      background: #ffffff;
-      ;
-    } */
 
     .swal-button {
       background-color: #0025ff;
@@ -163,19 +132,20 @@
 
     @media screen and (min-width:0px) and (max-width:400px) {
       form {
-        /* width: 300px; */
-        width: 18.75rem;
+        width: 300px;
       }
     }
   </style>
 </head>
 
 <body>
+  <div id="logo">
+    <img src="/image/IMG_20230223_200955.png" alt="">
+  </div>
   <nav>
     <a href="admin.html">Back to Home</a>
-    <img src="/image/logo.png" alt="">
-    <a href="">Back to BabyGloom</a>
 
+    <a href="">Back to BabyBloom</a>
 
   </nav>
   <marquee behavior="" scrollamount="10">
@@ -224,14 +194,14 @@
       <option value="T-Shirt">T-Shirt</option>
       <option value="Tops">Tops</option>
       <option value="Jeans">Jeans</option>
-      <option value="Belts">Belts</option>
-      <option value="Hats">Hats</option>
+      <option value="Tshirt & Short">Tshirt & short</option>
+      <option value="bath soap">bath soap</option>
       <option value="Hoodies">Hoodies</option>
       <option value="Jackets">Jackets</option>
       <option value="Shirts">Shirts</option>
       <option value="Shorts">Shorts</option>
       <option value="Sweaters">Sweaters</option>
-      <option value="Underwear">Underwear</option>
+      <option value="kurtha">kurtha</option>
       <option value="Wallets">Wallets</option>
       <option value="Bags">Bags</option>
       <option value="Jewelry">Jewelry</option>
@@ -241,7 +211,7 @@
       <option value="TomGirl">TomGirl</option>
     </select>
     <input type="text" name="Description" placeholder="Small Description about Product..." id="des" />
-    <button type="submit" id="btn" name="submit">ADD TO SITE</button>
+    <button type="submit" id="btn" name="submit">ADD to SITE</button>
   </form>
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
