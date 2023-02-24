@@ -11,104 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
-
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    #login-box {
-        margin: 40px auto;
-        width: 22%;
-
-    }
-
-    #logo {
-        margin: auto;
-        width: 10%;
-        margin: 23px auto 0;
-    }
-
-    .big-text {
-        font-size: 18px;
-        line-height: 25px;
-        color: #424242;
-        font-weight: 550;
-        margin: 10px 0;
-    }
-
-    .small {
-        font-size: 14px;
-    }
-
-    .inp {
-        border: none;
-        height: 30px;
-        margin: 5px 0;
-        border-bottom: 1px solid #a6a6a6;
-        width: 100%;
-        font-weight: 400;
-    }
-
-    input:focus {
-        outline: none;
-    }
-
-    #btn button {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        color: white;
-        background-color: #ff7043;
-        border: none;
-        height: 34px;
-        padding: 10px 0;
-        border-radius: 3px;
-        padding-bottom: 30px;
-        cursor: pointer;
-    }
-
-    #btn {
-        margin-top: 30px;
-    }
-
-    hr {
-        margin: 20px 0;
-        width: 100%;
-    }
-
-    .box {
-        border: 1px solid #cccccc;
-    }
-
-    .box img {
-        width: 8%;
-        margin-left: 30px;
-        margin-right: 10px;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    .small-text {
-        font-size: 14px;
-        line-height: 18px;
-        font-weight: 400;
-        text-align: center;
-    }
-
-    .blue {
-        color: #2979ff;
-        font-weight: 550;
-    }
-
-    .small-text a {
-        text-decoration: none;
-        color: #2979ff;
-    }
-</style>
-
+<link rel="stylesheet" href="/css/login.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -117,7 +20,7 @@
 
     <div id="logo">
         <a href="index.html">
-            <img src="" alt="">
+            <img src="/image/logo.png" alt="">
         </a>
     </div>
     <div id="login-box">
@@ -156,29 +59,4 @@
 </body>
 
 </html>
-
-<script>
-
-    function checkcredentials() {
-        console.log("Shashwat")
-
-        let email = document.getElementById("email").value;
-
-        let password = document.getElementById("password").value;
-
-        console.log(email, password);
-
-        let arr = JSON.parse(localStorage.getItem("login-details"));
-
-        for (var i = 0; i < arr.length; i++) {
-
-            if (arr[i].email === email && arr[i].password === password || arr[i].mobile == email && arr[i].password == password) {
-                window.location.href = "payment.html"
-                return;
-            }
-        }
-        alert("invalid credentials");
-
-    }
-
-</script>
+<script src="/script/login.js"></script>
