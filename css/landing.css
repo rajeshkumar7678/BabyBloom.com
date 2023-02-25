@@ -105,7 +105,8 @@ margin-left: 15%;
       margin-left: 1%;
   }
   .blue {
-      background-color: blue;
+      /* background-color: blue; */
+      background-color: rgb(0, 157, 220);
       padding: 0.8%;
   }
   a {
