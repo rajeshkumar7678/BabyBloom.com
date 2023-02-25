@@ -1,0 +1,68 @@
+.main{
+    width: 95%;
+    margin: auto;
+    margin-top: 160px;
+    
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+#product{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+.card1:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    
+    
+    
+}
+.card1 img{
+    width: 90%;
+    margin: 15px 15px 15px 15px;
+}
+
+.card1 p{
+   
+   font-family:'Times New Roman', Times, serif;
+   padding: 10px;
+   
+}
+.card1 h3{
+   
+    font-family:'Times New Roman', Times, serif;
+    padding: 10px;
+    
+ }
+
+.btn{
+    margin: 20px;
+    margin-left: 100px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-color: rgb(71, 162, 247);
+    border-radius: 20px;
+}
+.btn:hover{
+    background-color: rgb(241, 122, 42);
+}
+
+#filter{
+    width: 80%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+select{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    text-decoration: double;
+    border-radius: 15px;
+}
