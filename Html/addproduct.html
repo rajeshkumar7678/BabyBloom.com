@@ -266,16 +266,16 @@
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
       var requestOptions = {
-        method: "post",
-        headers: myHeaders,
-        redirect: "follow",
-        body: JSON.stringify([[form.name.value, form.price.value, form.color.value, form.img1.value, form.img2.value, form.img3.value, form.img4.value, form.main.value, form.sub.value, form.des.value]])
+      method: "post",
+      headers: myHeaders,
+      redirect: "follow",
+      body: JSON.stringify([[form.name.value, form.price.value, form.color.value, form.img1.value, form.img2.value, form.img3.value, form.img4.value, form.main.value, form.sub.value, form.des.value]])
       };
 
-      fetch("https://v1.nocodeapi.com/rajeshkumar7678/google_sheets/yUJreEUVCwZpGtpW?tabId=Sheet1", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+      fetch("https://v1.nocodeapi.com/rajeshkumargzb275/google_sheets/JmsNXQGQkkHiKPHJ?tabId=Sheet1", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
       swal("Product added to Site...");
     } else {
       swal("Please Provide Complete Information....!");
@@ -286,3 +286,6 @@
 </script>
 
 </html>
+
+
+// body: JSON.stringify([[form.name.value, form.price.value, form.color.value, form.img1.value, form.img2.value, form.img3.value, form.img4.value, form.main.value, form.sub.value, form.des.value]])

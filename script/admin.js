@@ -11,10 +11,10 @@ function fetchdata(){
         method: "get",
         headers: myHeaders,
         redirect: "follow",
-    
+        
     };
-
-    fetch("https://v1.nocodeapi.com/rajeshkumar7678/google_sheets/yUJreEUVCwZpGtpW?tabId=Sheet1", requestOptions)
+    
+    fetch("https://v1.nocodeapi.com/rajeshkumargzb275/google_sheets/JmsNXQGQkkHiKPHJ?tabId=Sheet1", requestOptions)
         .then(response => response.json())
         .then((result) =>{
             console.log(result.data)
@@ -23,6 +23,8 @@ function fetchdata(){
         })
         .catch(error => console.log('error', error));
 }
+
+
 fetchdata()
 function display(data){
     main.innerHTML=""
@@ -65,7 +67,10 @@ function display(data){
 }
 
 function updatedata(element){
-    console.log(element)
+    let arr=[]
+    arr.push(element)
+    localStorage.setItem("updatedata",JSON.stringify(arr))
+    window.location.href="update.html"
 }
 
 function deletedata(id){
@@ -75,10 +80,10 @@ function deletedata(id){
         method: "delete",
         headers: myHeaders,
         redirect: "follow",
-    
+        
     };
     
-    fetch(`https://v1.nocodeapi.com/rajeshkumar7678/google_sheets/yUJreEUVCwZpGtpW?tabId=Sheet1&row_id=${id}`, requestOptions)
+    fetch(`https://v1.nocodeapi.com/rajeshkumargzb275/google_sheets/JmsNXQGQkkHiKPHJ?tabId=Sheet1&row_id=${id}`, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
@@ -87,6 +92,7 @@ function deletedata(id){
     
     
 }
+
 
 //filter-----------------------------------------------------------------------------------
 sortbyprice.addEventListener("change",()=>{
