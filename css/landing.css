@@ -19,8 +19,12 @@
 .web {
     margin-left: 5%;
 }
-.web>a>img{
-width:15%
+.web img{
+    width: 100%;
+}
+.web{
+/* width:5% */
+margin-left: 15%;
 }
 .search-div {
     display: flex;
@@ -30,7 +34,7 @@ width:15%
     justify-content: flex-start;
     border-radius: 3px;
     border: 1px solid rgb(238, 238, 238);
-    margin-left: -30%;
+    margin-left: 1%;
   }
   #searchpng {
       width: 4%;
@@ -62,7 +66,7 @@ width:15%
   }
   .location, .Preschools, .Support, .Trackorder, .parenting,.my-account, .shortlist {
       border-right: 1px solid #d4d4d4;
-      padding-right: 10px;
+      padding-right: 9px;
       padding-left: 9px;
   }
   .location:hover, .Preschools:hover, .Support:hover, .Trackorder:hover, .parenting:hover, select:hover, .shortlist:hover {
