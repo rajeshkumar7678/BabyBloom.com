@@ -60,6 +60,7 @@ form.onsubmit = (e) => {
 
     if (pInput.value == "admin" && eInput.value == "admin@gmail.com") {
         alert("login Successful")
+        window.location.href="admin.html"
     } else {
         alert("wrong Credentials")
     }
