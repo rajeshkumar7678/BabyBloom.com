@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin - Add Product To Site...</title>
     
-    <link rel="stylesheet" href="scroll.css">
+    <link rel="stylesheet" href="/css/scroll.css">
     <style>
       * {
         margin: 0;
@@ -240,6 +240,7 @@
     var data=JSON.parse(localStorage.getItem("updatedata"))||[]
     console.log(data)
     form.name.value = data[0].name;
+    form.price.value = data[0].price;
     form.color.value = data[0].color
     form.img1.value = data[0].image1
     form.img2.value = data[0].image2 
@@ -266,15 +267,17 @@
         method: "put",
         headers: myHeaders,
         redirect: "follow",
-        body: JSON.stringify({"row_id":+data[0].row_id,"name":"NoCodeAPI v2","email":"hello@nocodeapi.com"})
+        body: JSON.stringify({"row_id":data[0].row_id,"name":form.name.value,"price":form.price.value,"color":form.color.value,"image1":form.img1.value,"image2":form.img2.value,"image3":form.img3.value,"image4":form.img4.value,"maincat":form.main.value,"subcat":form.sub.value,"description":form.des.value})
         };
 
-        fetch("https://v1.nocodeapi.com/rajeshkumar7678/google_sheets/yUJreEUVCwZpGtpW?tabId=Sheet1", requestOptions)
+        fetch("https://v1.nocodeapi.com/rajeshkumargzb275/google_sheets/JmsNXQGQkkHiKPHJ?tabId=Sheet1", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
+
         
-        swal("Product added to Site...");
+        
+        swal("Product update to Site...");
         }else {
         swal("Please Provide Complete Information....!");
       }
@@ -285,3 +288,4 @@
    
   </script>
 </html>
+
