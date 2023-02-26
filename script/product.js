@@ -113,3 +113,22 @@ sortbycat.addEventListener("change",()=>{
     }
     
 })
+ var search=document.getElementById("search")
+
+ 
+search.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+    //   console.log("yes")
+    let search_filter=data1.filter((ele)=>{
+        if(search.value===ele.subcat){
+            // console.log("yes")
+            return true
+          }
+          else{
+            return false
+          }
+    })
+    display(search_filter)
+    }
+    
+  });
