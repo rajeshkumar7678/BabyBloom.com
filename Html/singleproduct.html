@@ -7,6 +7,7 @@
     <title id="titled"></title>
     <link rel="stylesheet" href="/css/singleproduct.css">
     
+    
 </head>
 <body>
     <div class="sticky">
@@ -18,7 +19,7 @@
             </div>
             <div class="search-div">
                 <input type="text" placeholder="Search for a Category, Brand or Product" />
-                <img id="searchpng" src="https://image.flaticon.com/icons/png/128/49/49116.png" alt="" />
+                <img id="searchpng" src="" alt="" />
             </div>
 
             <div id=short-links>
@@ -100,12 +101,7 @@
     
                   
     <div id="body">
-        <div id="bodycate">
-            <div>Home</div><span>/</span>
-            <div id="upperMainC"></div><span>/</span>
-            <div id="upperSubC"></div><span>/</span>
-            <div id="upperTitle"></div>
-        </div>
+       
         <div id="bodypagemain">
             <div>
                 <div><img class="div1Images" id="image1" src="" alt="error"></div>
@@ -114,8 +110,8 @@
                 <div><img class="div1Images" id="image4" src="" alt="error"></div>
             </div>
             <div>
-                <div id="shareIcon"><img src="./images/share.png" alt="error"></div>
-                <div id="curimageimg"><img id="currimage" src="" alt="error"></div>
+                
+                <img id="currimage" src="" alt="error"></div>
                 <div id="main2data">
                     <h3>Materials & Care</h3>
                     <p>100% Cotton</p>
@@ -133,11 +129,7 @@
                 </div>
                 <div id="colorincircle"></div>
                 <div id="circleColor"></div>
-                <div id="sizescale">
-                    <img src="./images/scale.png" alt="error">
-                    <p>Size Chart</p>
-                    <p>Find the perfect size now !!</p>
-                </div>
+               
                 <div>
                     <select name="sizes" id="sizeValue">
                         <option value="">Size</option>
@@ -152,33 +144,29 @@
                 </div>
                 <div>
                     <button id="AddtoBag">ADD TO BAG</button>
+                    <button id="gotoBag">GO TO BAG</button>
                 </div>
-                <div>
-                    <p>Return Policy</p>
-                </div>
+                
                 <div id="div3bootom">
+                    <p>Return Policy</p>
                     <h3>Size & Fit</h3>
                     <p>Classic fit</p>
                     <h3>Need Help Finding Your Size?</h3>
                     <div>
-                        <img src="./images/scale.png" alt="error">
+                        <img src="/image/scale.png" alt="error">
                         <p>Size Chart</p>
                     </div>
                     <div>
                         Product Disclosure <span>+</span>
                     </div>
                     <div id="imgs">
-                        <img src="./images/bluefacebook.png" alt="error">
-                        <img src="./images/twiter.png" alt="error">
+                        <img src="/image/bluefacebook.png" alt="error">
+                        <img src="/image/twiter.png" alt="error">
                     </div>
                 </div>
             </div>
         </div>
-        <div id="recentsliders">
-            <h3>RECENTLY VIEWED</h3>
-            <div id="recentdata">
-            </div>
-        </div>
+       
     </div>
     <!-- footer -->
     <div class="footer-main">
@@ -260,96 +248,7 @@
            </div>
     
 </body>
-<script src="./scripts/singleProduct.js"></script>
-<!-- <script src="./scripts\index.js"></script> -->
-<!-- <script src="./scripts\signin.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
-<script>
- 
-    let body = document.getElementById("shareIcon");
-    let bodyy = document.getElementById("body");
-   let recentdata = document.getElementById("recentdata");
-   let localstoredata = JSON.parse(localStorage.getItem("recentStack"))||[];
-let stack = [];
-let count = 1;
-for(let a = localstoredata.length-1;a>=0;a--){
-    count++;
-    stack.unshift(localstoredata[a]);
-    console.log(localstoredata[a]);
-    if(count == 15){
-    localStorage.setItem("recentStack",JSON.stringify(stack));
-        break;
-    }
-   let div  = document.createElement("div");
-   let img = document.createElement("img");
-   let h3  =document.createElement("h3");
-//    let title = (localstoredata[a].Title);
-   h3.innerText = localstoredata[a].Title.slice(0,30)+"...";
-   let p = document.createElement("p");
-   p.innerText = "Rs - "+localstoredata[a].Price;
-   img.setAttribute("src",localstoredata[a].Image1);
-   div.append(img,h3,p);
-   recentdata.append(div);
-   stack.unshift();
-   div.addEventListener("click",()=>{
-    resenttomainpro(localstoredata[a]);
-   })
-}
+<script src="/script/singleproduct.js"></script>
 
-function resenttomainpro(arr){
-    localStorage.setItem("singleProduct",JSON.stringify(arr));
-    window.location.href = "/singleProductPage.html"
-}
-window.addEventListener('scroll',(event) => {
-    setTimeout(() => {
-        body.style.display = "none";
-    }, 0);
-});
-
-
-
-function datafunction(){
-    let loginstatus = JSON.parse(localStorage.getItem("loginstatus"))||[];
-
-// document.querySelector("#loginidi").addEventListener("click",function(){
-    if(loginstatus.status == false || loginstatus == []){
-        document.querySelector(".popup").classList.add("active")
-    }
-    else{
-        let idi = loginstatus.id;
-        // let output = confirm("Hi User... \n Do You Want to Logout...");
-        Swal.fire({
-        title: 'Do You Want To Logout...',
-        text: "Please Confirm...",
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes , Logout...'
-        }).then((result) => {
-       if (result.isConfirmed) {
-       let obj ={
-                id:idi,
-                status:false
-            }
-            localStorage.setItem("loginstatus",JSON.stringify(obj));
-            Swal.fire({
-            position: 'top',
-            icon: 'success',
-            title: 'Your Have Successfully Logout',
-            showConfirmButton: false,
-            timer: 2000 
-        })
-        window.location.reload();
-  }
-})
-    }
-
-document.querySelector(".popup .close-btn").addEventListener("click",function(){
-document.querySelector(".popup").classList.remove("active");
-
-})
-}
-</script>
 </html>
 
