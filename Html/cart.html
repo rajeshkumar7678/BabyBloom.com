@@ -1,221 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Summary </title>
-    <link rel="icon" type="image/x-icon" href="./images/logo.png">
-
-    <link rel="stylesheet" href="/css/cart.css">
-    <link rel="stylesheet" href="/css/scroll.css" />
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-</head>
-<style>
-    nav>a {
-        display: flex;
-        text-decoration: none;
-    }
-
-    nav>a>img {
-        width: 85px;
-    }
-
-    #navtext {
-        margin-left: 20px;
-        font-size: 30px;
-        color: black;
-    }
-</style>
-
-<body>
-    <nav>
-        <a href="./index.html">
-            <!-- <img src="./images/logo.png" alt=""> -->
-            <a href="./index.html" id="navtext">BABYBLOOM</a>
-        </a>
-
-    </nav>
-    <div class="eagle">
-        <div class="your-Cart">
-
-            <div class="cart">
-                <div class="edit">
-                    <h2 id="count">1.YOUR CART <span id="numOfitems">0</span> item(s)</h2>
-                    <h3>Edit</h3>
-                </div>
-                <!-- <div class="total">            -->
-                <div id="appendCart">
-
-
-                </div>
-
-
-                <!-- product will append here -->
-            </div>
-
-            <div class="shipping">
-                <div class="shipping-details">
-                    <h2>2.SHIPPING DETAILS</h2>
-                </div>
-                <div>
-                    <button id="btun">ADD NEW SHIPPING ADDRESS</button>
-                </div>
-                <!-- address part here -->
-                <div id="popupp">
-                    <div class="popup">
-
-                        <div class="title">
-                            <div id="closebar">
-                                <h2>Add shipping address</h2>
-                                <div id="close-btn">&times;</div>
-                            </div>
-                            <div class="popup-front">
-                                <div id="shpinggrid">
-                                    <input type="number" id="code" placeholder="Enter pincode*">
-                                    <button id="checkbtn">check</button>
-
-
-                                    <input type="text" id="F_name" placeholder="firstname*">
-                                    <input type="text" id="l_Name" placeholder="lastname*">
-
-
-
-                                    <input type="number" id="mobile" placeholder="mobile Number*">
-
-
-
-                                    <input type="text" id="add_1" placeholder="address Line 1">
-
-
-                                    <input type="text" id="land_mark" placeholder="Land_mark">
-                                    <input type="text" id="city" placeholder="City*">
-                                    <input type="text" id="state" placeholder="State*">
-                                </div>
-                                <div id="checkbox">
-                                    <input type="checkbox" id="scales" name="make" checked>
-                                    <label for="make">Make this my default address</label>
-                                </div>
-                                <!-- <div id="saveus">
-                   <p>Save As</p>
-                   <input type="button" id="homebtn" value="Home">
-                   <input type="button" id="officebtn" value="Office">
-                   <input type="button" id="otherbtn" value="Other">
-                  
-             </div> -->
-                                <form id="saveus">
-
-                                    <label>
-                                        Save As
-                                    </label>
-                                    <input type="radio" id="gender" name="gender" value="male" /> Home
-                                    <input type="radio" id="gender" name="gender" value="female" /> Office
-                                    <input type="radio" id="gender" name="gender" value="female" /> Other
-                                </form>
-                                <div>
-                                    <button id="savebtn">SAVE ADDRESS</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="append-address">
-                    <h5 id="addName"></h5>
-                    <p id="addline1"></p>
-                    <p id="addlandmark"></p>
-                    <p id="addstate"></p>
-                    <p><span id="mobCity"></span> :- <span id="mopPincode"></span></p>
-                    <p>Mobile No. :-<span id="addMob"></span></p>
-                    <div id="button-address">
-                        <button id="deliver-button">DELIVER HERE</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="payment">
-                <h2>3.PAYMENT OPTIONS</h2>
-                <!-- payment part  -->
-                <div class="Select-payment">
-                    <p id="spo">Select payment options</p>
-                    <input type="checkbox" id="check-payment">
-                    <label for="check-payment">Pay using Gift Card</label>
-                    <h3> SELECT YOUR PAYMENT MODE</h3>
-                    <div id="credit-payment">
-                        <div id="left-side-payment">
-                            <button id="cod">COD</button>
-                            <button id="cdc">Credit/Debit Cards</button>
-                        </div>
-                        <div id="credit-debit-payment">
-                            <h3 id="hedding">Credit / Debit Cards</h3>
-                            <div id="card-payment">
-                                <label for="number-card">card number</label>
-                                <input type="number" id="number-card" placeholder="Enter 16 digit card number">
-                                <label for="date-payment">card Expiry Date</label>
-                                <input type="date" id="date-payment" placeholder="MM/YY">
-                                <label for="CVV-payment">CVV</label>
-                                <input type="number" id="CVV-payment">
-                            </div>
-                            <div id="check-pay">
-                                <input type="checkbox" id="check-card">
-                                <label for="check-card">Save this card for future payments </label>
-                            </div>
-
-                            <button id="paybutton">SECURELY PAY</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <title>Order Page</title>
+   <link rel="stylesheet" href="/css/cart.css">
+  </head>
+  <body>
+   <!-- nav bar -->
+   <div class="sticky">
+    <div class="header">
+        <div class="web">
+            <a href="#">
+                <img src="/image/WhatsApp Image 2023-02-20 at 23.20.59.jpg" alt="logo">
+            </a>
+        </div>
+        <div class="search-div">
+            <input type="text" placeholder="Search for a Category, Brand or Product" />
+            <img id="searchpng" src="https://image.flaticon.com/icons/png/128/49/49116.png" alt="" />
         </div>
 
-        <div class="order-product">
-
-            <div class="coupon">
-                <!-- apply coupon-->
-                <img src="https://cdn-icons-png.flaticon.com/128/9296/9296832.png" alt="coupon">
-                <p>Apply coupen to get the best prices</p>
+        <div id=short-links>
+            <div class="location">
+                <a href="location.html"><span>Select location</span></a>
+            </div>
+            <div class="Preschools">
+                <span>Stores & Preschools</span>
+            </div>
+            <div class="Support">
+                <span>Support</span>
+            </div>
+            <div class="Trackorder">
+                <span>Track Order</span>
+            </div>
+            <div class="parenting">
+                <span>Firstcry Parenting</span>
+            </div>
+            <div class="my-account">
+               <a href="./Html/login.html"><span>Login/Register</span></a>
+            </div>
+            <div class="shortlist">
+                <img src="https://www.svgrepo.com/show/14970/heart.svg" class="svg" alt=""> Shortlist
+            </div>
+            <div>
+                <a href="./Html/cart.html"><img src="https://www.svgrepo.com/show/11541/shopping-cart.svg" class="cart" alt=""></a>
             </div>
 
-            <div class="order">
-                <h1>Order Summary</h1>
-                <div>
-                    <p>Order value :</p><span id="orderVal">0.000</span>
-                </div>
-                <div>
-                    <p>Product Discount :</p><span id="prodDiscount">0.000</span>
-                </div>
-                <div>
-                    <p>Shipping :</p><span>FREE</span>
-                </div>
-                <div>
-                    <p>TOTAL : </p><span id="totalAmt">0.000</span>
-                </div>
-                <p style="color: rgb(0, 163, 0);">You saved <span id="prodDis">0</span> on this order</p>
-                <div id="save-payment">
-                    <img src="https://cdn-icons-png.flaticon.com/128/1161/1161490.png" alt="secure">
-                    <p>Safe and Secure Payments.
-                        Easy returns. 100% Authentic
-                        products</p>
-                </div>
-                <!-- order summery -->
-            </div>
-
+ 
         </div>
-
     </div>
-
-    <div id="noProds">
-        <h2></h2>
+    <!-- nav bar -->
+    <div class="category">
+        <div class="all-cat">
+            <a href="./Html/product.html">ALL CATOGORIES</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">BOY FASHION</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">GIRL FASHION</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">FOOTWEAR</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">TOYS</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">DIAPERING</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">GEAR</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">FEEDING</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">BATH & SKIN</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">NURSERY</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">MOMS</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">HEALTHY & SAFETY</a>
+        </div>
+        <div class="all-cat-1">
+            <a href="./Html/product.html">BOUTIQUES</a>
+        </div>
+        <div class="all-cat-1 blue">
+            <a href="./Html/product.html">Carter's</a>
+        </div>
     </div>
-</body>
-<script src="./script/cart.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
-<script>
-    // swal("HEHEEHHEEH");
-</script>
+</div>
+    <div class="nav">
+      <h1>Your Cart Items </h1>
+      
+    </div>
+   
+    <div id="cupon">
+      <input type="text" placeholder="Apply Coupon" />
+      <button>Add Cupon</button>
+      <button id="proceed">Proceed To Pay</button>
+    </div>
+    <h1 id="total">
+        Your Total Cart Items Price = <span id="order-total">0</span>
+      </h1>
+    <div id="order-container">
+      <!-- Here Append All the Order Cards here-->
+    </div>
+  </body>
+  <script>
+    var proceed=document.getElementById("proceed")
+    proceed.addEventListener("click",()=>{
+        window.location.href="./paydetails.html"
+    })
+    var quant=0;
+    let ordercont=document.getElementById("order-container")
+    var total_sum=document.getElementById("order-total")
+     var narray=JSON.parse(localStorage.getItem("catrdata"))
+    if(narray===null){
+      narray=[]
+    
+    }
+    Display(narray)
+    // console.log(narray)
+    function Display(narray){
+      narray.forEach((element)=>{
 
+      
+   let div=document.createElement("div")
+    
+   let title=document.createElement("h3")
+   title.innerText=element.name
+
+   let image=document.createElement("img")
+   image.setAttribute("src",element.image1)
+  //  console.log(image)
+  let desc=document.createElement("p")
+  desc.innerText=element.description
+  // console.log(desc)
+  let price=document.createElement("h4")
+  price.innerText=element.price
+  let btn=document.createElement("button")
+  btn.innerText="cancel"
+
+
+  quant=quant+ element.price
+  console.log(quant)
+  var arr=[]
+  arr.push(element)
+  var count=+(1)
+  var btn2=document.createElement("button")
+  btn2.innerText="+"
+  btn2.addEventListener("click",()=>{
+    count++
+    Quantity.innerText=count
+    total_sum.innerText=quant+(count-1)*
+    (element.price)
+
+  })
+  
+  var btn3=document.createElement("button")
+  btn3.innerText="-"
+  btn3.addEventListener("click",()=>{
+    count--
+    var min_quant=Quantity.innerText-count
+    Quantity.innerText=count
+    total_sum.innerText=(total_sum.innerText)-(min_quant*element.price)
+  })
+  var Quantity=document.createElement("h5")
+  Quantity.innerText=count
+
+ 
+
+  div.append(image,title,desc,price,btn2,btn3,Quantity)
+  ordercont.append(div)
+  
+})
+// console.log(quant)
+total_sum.innerText=quant
+var coupon=document.querySelector("input")
+// console.log(coupon.value)
+var coupon_btn=document.querySelector("button")
+coupon_btn.addEventListener("click",function(){
+   
+    // console.log("yes")
+    // console.log(coupon.value)
+
+  var cpn="Verma40"
+  if(coupon.value===cpn){
+    var final_price=Math.floor((quant)*(40/100))
+    // console.log(final_price)
+
+    var final=quant-final_price
+    total_sum.innerText=final
+   
+  }
+  localStorage.setItem("total_amount",JSON.stringify(total_sum.innerText))
+})
+
+    }
+  
+    
+  </script>
 </html>
