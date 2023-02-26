@@ -12,7 +12,7 @@ function checkcredentials() {
     for (var i = 0; i < arr.length; i++) {
 
         if (arr[i].email === email && arr[i].password === password || arr[i].mobile == email && arr[i].password == password) {
-            window.location.href = "payment.html"
+            window.location.href = "product.html"
             return;
         }
     }

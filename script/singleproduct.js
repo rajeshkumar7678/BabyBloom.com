@@ -29,6 +29,7 @@ pri.innerText=data[0].price
 var btn1=document.getElementById("AddtoBag")
 btn1.addEventListener("click",()=>{
   localStorage.setItem("catrdata",JSON.stringify(data))
+  alert("product added to bag")
   
 })
 
