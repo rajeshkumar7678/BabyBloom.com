@@ -222,9 +222,9 @@ cdc.addEventListener("click",()=>{
 close.addEventListener("click", ()=>{
     show.style.display="none";
 })
+let userDataURL = `https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI/`
 
-
-let loginStatus = JSON.parse(localStorage.getItem("catrdata"))  || null ;
+let loginStatus = JSON.parse(localStorage.getItem("loginstatus"))  || null ;
 
 let bodydiv =  document.querySelector(".eagle");
 let noprod = document.querySelector("#noProds>h2")

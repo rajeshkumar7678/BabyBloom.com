@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="favicon" rel="shortcut icon" href="icon_32.ico">
+    <title>Successfully ordered</title>
+</head>
+<style>
+
+span {
+  font-weight: bold;
+  color: #3e7697;
+}
+* {
+  color: black;
+}
+#contain {
+  width: 30%;
+  margin: auto;
+  margin-top: 100px;
+  border: black solid 1px;
+  padding: 15px;
+}
+#imageDiv {
+  width: 150px;
+  margin: auto;
+}
+img {
+  width: 100%;
+}
+button {
+  margin: auto;
+}
+#butDiv {
+  width: 30%;
+  margin: auto;
+  margin-top: 25px;
+  justify-content: center;
+}
+button {
+  margin-left: 20%;
+  font-weight: bold;
+  width: 60%;
+  border: #f96302 solid 2px;
+  color: #f96302;
+  background-color: white;
+  height: 40px;
+}
+button:hover {
+  background-color: #f96302;
+  color: white;
+}
+
+  </style>
+  <body>
+    <div id="contain">
+      <div id="imageDiv">
+        <img
+          src="./vt (1).png"
+          alt=""
+        />
+      </div>
+      <h3>Dear <span id="name"></span>,</h3>
+      <h3>Your Order has been Successfully placed.</h3>
+      <p>Your Products will be deliverd in 7 days.</p>
+      <p>At Address <span id="address"></span>.</p>
+      <p>And will contact you at this number <span id="number"></span>.</p>
+      <p>Amount Paid is <span id="payable"></span>.</p>
+    
+    </div>
+    <div id="butDiv">
+      <a href="/index.html"><button id=`butter` >Continue Shopping</button></a>
+    </div>
+  </body>
+</html>
+<script>
+    let userDetails = JSON.parse(localStorage.getItem("userDetails"));
+
+let username = document.getElementById("name");
+username.textContent = userDetails.firstname + " " + userDetails.lastname;
+
+let cartproducts = JSON.parse(localStorage.getItem("addToCart"));
+cartproducts = [];
+localStorage.setItem("addToCart", JSON.stringify(cartproducts));
+
+let payableamountIs = JSON.parse(localStorage.getItem("payableAmount"));
+payableamountIs = 0;
+localStorage.setItem("payableAmount", JSON.stringify(payableamountIs));
+
+let address = document.getElementById("address");
+address.textContent =
+  userDetails.hno +
+  ", " +
+  userDetails.town +
+  " ," +
+  userDetails.country +
+  " ," +
+  userDetails.pin;
+
+let number = document.getElementById("number");
+number.textContent = userDetails.mobile;
+
+let payable = document.getElementById("payable");
+payable.textContent = "$" + Number(userDetails.toPay).toFixed(2);
+
+function treaser() {
+  window.location.href = ".";
+}
+</script>

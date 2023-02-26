@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
     <title>Order Page</title>
    <link rel="stylesheet" href="/css/cart.css">
+   <style>
+    #proceed{
+        text-align: end;
+        margin-right: 50px;
+    }
+    #proceed button{
+        width: 200px;
+        height: 40px;
+        background-color: rgb(142, 142, 238);
+        font-size: 18px;
+    }
+   </style>
   </head>
   <body>
    <!-- nav bar -->
@@ -102,12 +114,11 @@
       <h1>Your Cart Items </h1>
       
     </div>
-   
-    <div id="cupon">
-      <input type="text" placeholder="Apply Coupon" />
-      <button>Add Cupon</button>
-      <button id="proceed">Proceed To Pay</button>
+    <div id="proceed">
+        <button>Proceed to Pay</button>
+
     </div>
+    
     <h1 id="total">
         Your Total Cart Items Price = <span id="order-total">0</span>
       </h1>
@@ -118,6 +129,8 @@
   <script>
     var proceed=document.getElementById("proceed")
     proceed.addEventListener("click",()=>{
+        console.log(total_sum)
+        localStorage.setItem("total_amount",JSON.stringify(total_sum))
         window.location.href="./paydetails.html"
     })
     var quant=0;
@@ -155,9 +168,9 @@
   console.log(quant)
   var arr=[]
   arr.push(element)
-  var count=+(1)
+  var count=1
   var btn2=document.createElement("button")
-  btn2.innerText="+"
+  btn2.innerText="quantity+"
   btn2.addEventListener("click",()=>{
     count++
     Quantity.innerText=count
@@ -167,7 +180,7 @@
   })
   
   var btn3=document.createElement("button")
-  btn3.innerText="-"
+  btn3.innerText="quantity-"
   btn3.addEventListener("click",()=>{
     count--
     var min_quant=Quantity.innerText-count
@@ -181,33 +194,19 @@
 
   div.append(image,title,desc,price,btn2,btn3,Quantity)
   ordercont.append(div)
+
   
 })
+}
 // console.log(quant)
-total_sum.innerText=quant
-var coupon=document.querySelector("input")
-// console.log(coupon.value)
-var coupon_btn=document.querySelector("button")
-coupon_btn.addEventListener("click",function(){
-   
-    // console.log("yes")
-    // console.log(coupon.value)
-
-  var cpn="Verma40"
-  if(coupon.value===cpn){
-    var final_price=Math.floor((quant)*(40/100))
-    // console.log(final_price)
-
-    var final=quant-final_price
-    total_sum.innerText=final
-   
-  }
-  localStorage.setItem("total_amount",JSON.stringify(total_sum.innerText))
-})
-
-    }
+var total=document.getElementById("order-total")
+      var sum=0
+      narray.forEach((element)=>{
+        sum+=Number(element.price)
+      })
   
-    
+      total_sum.innerText=sum
+   
   </script>
 </html>
 

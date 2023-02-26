@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Details</title>
+   <style>
+       body{
+           background-color: #EEEEEE;
+       }
+       .header{
+         
+           height: 90px;
+           width: 100%;
+           display: flex;
+           box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+       }
+       h2{
+           font-family: Times New Roman;
+           font-size: 28px;
+           margin-left: 25%;
+           display: block;
+       }
+       .order{
+       
+           width: 6%;
+           height: 70px;
+           font-family: Times New Roman;
+           margin-left: 20%;
+           margin-top: 1%;
+       }
+       .amount{
+     
+        display: block;
+   
+        height: 70px;
+        width: 6%;
+        margin-top: 1%;
+        margin-right: 28%;
+        font-family: Times New Roman;
+        color: #333333;
+        font-weight: bold;
+       }
+       hr{
+           height: 50px;
+           margin-top: 1%;
+           margin-left: 2.7%;
+       }
+      .container{
+         display: flex;
+          height: 600px;
+          width: 45%;
+          margin: auto;
+          margin-top: 1%;
+          box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      }
+      #pay{
+          margin-left: 27.3%;
+      }
+      .content{
+         
+          height: 600px;
+          width: 30%;
+      }
+      .num{
+       
+          width: 70%;
+          height: 500px;
+      }
+      .content2{
+       
+          height: 600px;
+          width: 70%;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size: 20px;
+          
+      }
+      .content2 input{
+          margin-top: 2%;
+          margin-bottom: 2%;
+          height: 40px;
+          width: 400px;
+          border-radius: 5%;
+          margin-left: 5%;
+      }
+      .content2 article{
+        margin-left: 5%;
+      }
+      p{
+          margin-left: 5%;
+      }
+  #expiry{
+      height: 40px;
+  }
+  #submit{
+      display: block;
+      width: 20%;
+      background-color: #FF7B73;
+      color: white;
+      border: none;
+      font-size: 20px;
+  }
+  #submit1{
+      display: block;
+      width: 20%;
+      background-color: #FF7B73;
+      color: white;
+      border: none;
+      font-size: 20px;
+  }
+  #debit:hover{
+      border-left: brown;
+      background-color: brown;
+  }
+
+  #power{
+      padding-top: 150%;
+      margin-left: 20%;
+      display: flex;
+    
+  }
+
+  .content2 input:hover{
+      border: 1px solid brown;
+  }
+   </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Order Summmary</h2>
+      
+        <div class="order">
+            <article style="padding-top: 10%; display: inline;">Order Number</article> 
+            <article style=" font-size: 22px; display: inline;">ORDER19930549</article>
+
+         
+
+        </div>
+  <hr>
+        <div class="amount">
+            <article style=" display: inline;">Amount</article> 
+            <article style=" font-size: 22px;">#####</article>
+        </div>
+    </div>
+    <h3 id="pay">Payment Methods</h3>
+    <div class="container">
+        
+      <div class="content">
+     
+        <div onclick="Debit()" id="debit" style="transition:0ms all;width : auto; height: auto; width:calc(100% - 0px );height: 56px;padding: 0px 15px 0px 29px;margin: 0px 0px 0px 0px;display: flex;box-sizing: border-box;flex-direction: row;align-items: center;justify-content: center;cursor:pointer;background: #ffffff;border-radius:0px;opacity:1;pointer-events: auto;;user-select: none;flex:none;"><img alt="" id="1000039" src="data:image/svg+xml;utf8,<svg width=&quot;20&quot; height=&quot;16&quot; viewBox=&quot;0 0 20 16&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><rect opacity=&quot;0.3&quot; x=&quot;2&quot; y=&quot;2&quot; width=&quot;16&quot; height=&quot;2&quot; fill=&quot;%23333333&quot;/><rect opacity=&quot;0.3&quot; x=&quot;2&quot; y=&quot;8&quot; width=&quot;16&quot; height=&quot;6&quot; fill=&quot;%23333333&quot;/><path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M18 0H2C0.89 0 0.01 0.89 0.01 2L0 14C0 15.11 0.89 16 2 16H18C19.11 16 20 15.11 20 14V2C20 0.89 19.11 0 18 0ZM18 14H2V8H18V14ZM2 4H18V2H2V4Z&quot; fill=&quot;%23333333&quot;/></svg>" style="margin:0;padding:0;display:block;max-width:100%;max-height:100%;box-sizing:border-box;transition:0ms all;width : auto; height: auto; width: 24px;height: 24px;padding: 0px 0px 0px 0px;margin: 0px 0px 0px 6px;flex:none;"><div id="1000040" class="linearLayout" style="transition:0ms all;width : auto; height: auto; width:calc(100% - 15px );height: 100%;padding: 0px 0px 0px 0px;margin: 0px 0px 0px 15px;display: flex;box-sizing: border-box;flex-direction: column;align-items: flex-start;justify-content: center;width:calc(100% - 15px );flex:1;flex-basis:auto;"><div id="1000041" class="textView" style="transition:0ms all;width : auto; height: auto; padding: 0px 0px 0px 0px;margin: 0px 0px 0px 0px;font-size: 15px;color: #000000;opacity:1;font-family:Metropolis;font-weight:700;text-align:start;flex:none;"><article style="word-break: break-word; display: inline;">Debit / Credit card</article></div></div></div>
+        <div onclick="upiPay()" id="upi" class="linearLayout" style="transition:0ms all;width : auto; height: auto; width:calc(100% - 0px );height: 56px;padding: 0px 15px 0px 35px;margin: 0px 0px 0px 0px;display: flex;box-sizing: border-box;flex-direction: row;align-items: center;justify-content: center;cursor:pointer;background: #fbfbfb;border-radius:0px;opacity:1;pointer-events: auto;user-select: none;flex:none;"><img alt="" id="1000043" class="imageView" src="data:image/svg+xml;utf8,<svg width=&quot;18&quot; height=&quot;22&quot; viewBox=&quot;0 0 18 22&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path d=&quot;M11.7492 0L5.5 22L17.4167 11.003L11.7492 0Z&quot; fill=&quot;%23333333&quot;/><path d=&quot;M10.803 10.806L1.73999 19.1696L6.49489 2.4379L10.803 10.806Z&quot; fill=&quot;%23333333&quot; fill-opacity=&quot;0.3&quot; stroke=&quot;%23333333&quot; stroke-width=&quot;1.8&quot;/></svg>" style="margin:0;padding:0;display:block;max-width:100%;max-height:100%;box-sizing:border-box;transition:0ms all;width : auto; height: auto; width: 24px;height: 24px;padding: 0px 0px 0px 0px;margin: 0px 0px 0px 6px;flex:none;"><div id="1000044" class="linearLayout" style="transition:0ms all;width : auto; height: auto; width:calc(100% - 15px );height: 100%;padding: 0px 0px 0px 0px;margin: 0px 0px 0px 15px;display: flex;box-sizing: border-box;flex-direction: column;align-items: flex-start;justify-content: center;width:calc(100% - 15px );flex:1;flex-basis:auto;"><div id="1000045" class="textView" style="transition:0ms all;width : auto; height: auto; padding: 0px 0px 0px 0px;margin: 0px 0px 0px 0px;font-size: 15px;color: #333333;opacity:1;font-family:Metropolis;font-weight:400;text-align:start;flex:none;"><article style="word-break: break-word; display: inline;">UPI</article></div></div></div>
+       <div id="power">
+       
+        <div id="1000055" class="textView" style="transition:0ms all;width : auto; height: auto; font-size: 11px;color: #333333;opacity:0.5;font-family:sans-serif,normal;flex:none;"><article style="word-break: break-word; display: inline;">Powered by </article></div>
+ <img alt="" id="1000056" class="imageView" src="data:image/svg+xml;utf8, <svg width=&quot;68px&quot; height=&quot;16px&quot; viewBox=&quot;0 0 68 16&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;> <!-- Generator: Sketch 61.1 (89650) - https://sketch.com --> <title>Symbols</title> <desc>Created with Sketch.</desc> <g id=&quot;Symbols&quot; stroke=&quot;none&quot; stroke-width=&quot;1&quot; fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;> <g id=&quot;powered-by&quot; transform=&quot;translate(-68.000000, 0.000000)&quot; fill-rule=&quot;nonzero&quot;> <g transform=&quot;translate(0.000000, -1.000000)&quot; id=&quot;Symbols&quot;> <g transform=&quot;translate(68.000000, 1.000000)&quot;> <g id=&quot;AxisPay--juspay&quot;> <g id=&quot;Juspay_Logo_V3&quot;> <g id=&quot;Group&quot; transform=&quot;translate(0.000000, 0.492235)&quot;> <path d=&quot;M7.27080721,14.5777941 C6.92180846,14.5874546 6.58250412,14.5584729 6.23350537,14.5101701 C5.29314765,14.3749222 4.41095637,14.0754446 3.59662597,13.5827558 C1.79346577,12.5007724 0.639831034,10.9261001 0.164804963,8.858739 C0.0581664577,8.39503184 0.00969440962,7.92166411 0.00969440962,7.44829637 C-2.08704581e-14,5.55482544 0.620442216,3.89320809 1.88071547,2.48276545 C2.97618375,1.26553414 4.33340109,0.521670562 5.93297868,0.212532452 C6.37892152,0.125587358 6.82486437,0.0772845279 7.27080721,0.0966056597 L7.27080721,2.26057244 C7.25141838,2.27023301 7.23202957,2.27989357 7.21264074,2.2992147 C6.95089169,2.48276545 6.68914263,2.67597677 6.43708798,2.87884867 C5.86511781,3.34255582 5.32223087,3.8352447 4.86659363,4.42453921 C4.25584582,5.20704506 3.84868062,6.06683543 3.79051415,7.08119486 C3.76143092,7.56422316 3.81959739,8.03759089 3.97470794,8.4916375 C4.35278992,9.62192371 5.52581348,10.7908522 7.17386311,10.8198339 C7.27080721,10.8198339 7.29019602,10.839155 7.29019602,10.9454213 C7.28050161,11.4381101 7.28050161,12.4234878 7.28050161,12.4234878 L7.28050161,12.5104329 C7.27080721,13.1963331 7.27080721,13.8822333 7.27080721,14.5777941 L7.27080721,14.5777941 Z&quot; id=&quot;Shape&quot; fill=&quot;%230099FF&quot;></path> <path d=&quot;M7.27080721,2.25091187 L7.27080721,0.0869450938 C7.668278,0.0772845279 8.05605439,0.115926792 8.44383077,0.173890188 C9.17091149,0.289816979 9.86890898,0.50234943 10.5281288,0.84046924 C11.8950406,1.54569056 12.9711201,2.55038941 13.6982008,3.92218979 C14.1150604,4.7143562 14.3865039,5.55482544 14.4931423,6.43393695 C14.6191697,7.4676175 14.5222256,8.4916375 14.2120045,9.48667579 C13.8533113,10.616962 13.2522579,11.6120003 12.4088443,12.4524695 C11.3812369,13.466829 10.1597413,14.1237475 8.74435746,14.423225 C8.25963699,14.5198306 7.7652221,14.5777941 7.27080721,14.5681336 L7.27080721,12.4911118 L7.27080721,12.4138273 C7.27080721,12.4138273 7.29989044,12.3945062 7.30958485,12.3848456 C8.0657488,11.8535144 8.78313511,11.2738805 9.40357733,10.5783197 C9.81074253,10.1242731 10.1597413,9.64124485 10.4021015,9.08093202 C10.7414058,8.28876561 10.8771276,7.47727807 10.7026282,6.6174877 C10.3924071,5.052476 8.98671771,3.88354752 7.36775131,3.84490526 C7.2611128,3.84490526 7.27080721,3.75796016 7.27080721,3.75796016 L7.27080721,2.25091187 L7.27080721,2.25091187 Z&quot; id=&quot;Shape&quot; fill=&quot;%230585DD&quot;></path> </g> <g id=&quot;Group&quot; transform=&quot;translate(16.480497, 2.327743)&quot; fill=&quot;%23363636&quot;> <path d=&quot;M6.1559501,7.69947109 C6.1559501,8.10521485 6.08808923,8.4916375 5.96206191,8.86839956 C5.83603458,9.24516164 5.63245198,9.57362089 5.38039733,9.86343787 C5.11864828,10.1532548 4.79873276,10.3754479 4.41095637,10.549338 C4.02317999,10.7135677 3.56754273,10.8005128 3.06343343,10.8005128 C2.24910303,10.8005128 1.58018876,10.6073014 1.06638506,10.2305394 C0.542886938,9.85377729 0.203582602,9.25482221 0.0387776385,8.4336741 L1.75468814,8.02793033 C1.8128546,8.36605014 1.94857634,8.63654598 2.17154776,8.83941788 C2.38482477,9.04228976 2.65626823,9.13889542 2.97618375,9.13889542 C3.49968187,9.13889542 3.85837502,8.96500522 4.0425688,8.60756428 C4.22676259,8.25978391 4.32370669,7.76709505 4.32370669,7.14881882 L4.32370669,0.280156413 L6.1559501,0.280156413 L6.1559501,7.69947109 L6.1559501,7.69947109 Z&quot; id=&quot;Shape&quot;></path> <path d=&quot;M16.2575249,6.77205675 C16.2575249,7.39033298 16.1508864,7.95064581 15.9376094,8.44333466 C15.7243323,8.9456841 15.4335001,9.36108843 15.0651126,9.70886881 C14.696725,10.0566492 14.2604765,10.327145 13.7563672,10.5106958 C13.2522579,10.7039071 12.6996766,10.7908522 12.1083176,10.7908522 C11.5169586,10.7908522 10.9643773,10.6942465 10.4699624,10.5106958 C9.96585308,10.327145 9.52960465,10.0566492 9.15152268,9.70886881 C8.77344069,9.36108843 8.4826084,8.93602354 8.27902581,8.44333466 C8.0657488,7.95064581 7.9688047,7.39033298 7.9688047,6.77205675 L7.9688047,0.280156413 L9.80104812,0.280156413 L9.80104812,6.71409336 C9.80104812,6.96526806 9.83982576,7.22610336 9.91738103,7.50625977 C9.99493631,7.77675561 10.1209636,8.03759089 10.3051574,8.26944448 C10.4796568,8.50129806 10.722017,8.69450938 11.0225437,8.83941788 C11.313376,8.99398692 11.6817636,9.06161089 12.118012,9.06161089 C12.5542604,9.06161089 12.922648,8.98432636 13.2134803,8.83941788 C13.5043126,8.69450938 13.7466728,8.50129806 13.9308666,8.26944448 C14.105366,8.03759089 14.2410877,7.78641617 14.318643,7.50625977 C14.3961983,7.22610336 14.434976,6.96526806 14.434976,6.71409336 L14.434976,0.280156413 L16.2672194,0.280156413 L16.2672194,6.77205675 L16.2575249,6.77205675 Z&quot; id=&quot;Shape&quot;></path> <path d=&quot;M23.1987222,2.48276545 C23.0048341,2.20260904 22.7430849,1.99973716 22.4231694,1.86448924 C22.0935595,1.7292413 21.7542551,1.67127792 21.3955621,1.67127792 C21.182285,1.67127792 20.9787024,1.70025962 20.7751197,1.74856244 C20.5715372,1.79686528 20.3970377,1.8741498 20.2419272,1.98041602 C20.0771223,2.08668225 19.951095,2.22193017 19.8541508,2.39582036 C19.7572068,2.56971055 19.7087347,2.76292187 19.7087347,2.99477545 C19.7087347,3.34255582 19.8250676,3.61305168 20.0771223,3.78694186 C20.3194825,3.97049262 20.6200092,4.13472223 20.9787024,4.26030959 C21.3373956,4.39555751 21.725172,4.53080545 22.1517259,4.65639281 C22.57828,4.78198016 22.9660564,4.95587034 23.3344439,5.17806336 C23.6931371,5.40025638 23.9936637,5.69973393 24.2360241,6.05717487 C24.4783843,6.42427637 24.6044115,6.91696524 24.6044115,7.51592033 C24.6044115,8.06657259 24.5074675,8.54960089 24.303885,8.95534466 C24.1003023,9.370749 23.8288588,9.70886881 23.4798601,9.97936465 C23.1308613,10.2498605 22.7333905,10.4527324 22.2777533,10.5879803 C21.822116,10.7232282 21.3373956,10.7908522 20.8429806,10.7908522 C20.2031496,10.7908522 19.5827074,10.684586 19.0010428,10.4720535 C18.4096839,10.2595211 17.8958802,9.90208013 17.4693261,9.39973069 L18.8556266,8.06657259 C19.0785981,8.4046924 19.3694304,8.66552768 19.737818,8.858739 C20.1062056,9.05195032 20.4842876,9.13889542 20.8914527,9.13889542 C21.1047298,9.13889542 21.3180068,9.10991372 21.5312837,9.05195032 C21.7445607,8.99398692 21.938449,8.90704184 22.1129483,8.79111504 C22.2874477,8.67518824 22.4231694,8.53027976 22.5298079,8.34672901 C22.6364465,8.17283882 22.694613,7.96030637 22.694613,7.72845279 C22.694613,7.35169071 22.5685856,7.06187374 22.3262254,6.85900184 C22.0838652,6.65612996 21.7833384,6.48223977 21.4246452,6.34699185 C21.065952,6.21174393 20.6684813,6.07649599 20.2419272,5.95090865 C19.8153733,5.82532129 19.4179025,5.6514311 19.0689037,5.43889864 C18.7102105,5.2263662 18.4096839,4.93654922 18.1673236,4.56944771 C17.9249633,4.20234619 17.7989361,3.7193179 17.7989361,3.11070224 C17.7989361,2.57937111 17.9055746,2.12532452 18.128546,1.73890188 C18.341823,1.35247924 18.6326552,1.03368056 18.9913484,0.772845279 C19.3403472,0.521670562 19.7475124,0.328459243 20.2031496,0.202871886 C20.6587869,0.0772845279 21.1241185,0.019321132 21.5991446,0.019321132 C22.1420315,0.019321132 22.6655296,0.106266226 23.1793334,0.260835281 C23.6834426,0.425064903 24.1487744,0.69556075 24.5559396,1.07232282 L23.1987222,2.48276545 L23.1987222,2.48276545 Z&quot; id=&quot;Shape&quot;></path> <path d=&quot;M26.1361282,0.280156413 L29.5970326,0.280156413 C30.0914474,0.280156413 30.5664734,0.328459243 31.0318051,0.425064903 C31.4874424,0.521670562 31.8946077,0.685900184 32.2436063,0.908093202 C32.5926051,1.13994679 32.8737429,1.43942433 33.0773256,1.8161864 C33.2809082,2.20260904 33.3875467,2.67597677 33.3875467,3.24595016 C33.3875467,3.89320809 33.2712138,4.41487865 33.0482424,4.81096186 C32.825271,5.20704506 32.5247442,5.51618318 32.1466623,5.72871563 C31.7685803,5.94124807 31.3323318,6.09581713 30.8282226,6.17310167 C30.3241132,6.25038619 29.8103095,6.28902845 29.2674226,6.28902845 L27.9586773,6.28902845 L27.9586773,10.5396775 L26.1264338,10.5396775 L26.1264338,0.280156413 L26.1361282,0.280156413 Z M29.0735344,4.73367733 C29.3352834,4.73367733 29.606727,4.72401677 29.8878648,4.70469563 C30.1690027,4.68537451 30.4307518,4.62741111 30.6634176,4.53080545 C30.8960835,4.43419979 31.0899716,4.28929129 31.2450821,4.09607997 C31.3904983,3.90286866 31.4680536,3.6323728 31.4680536,3.28459243 C31.4680536,2.96579375 31.4001927,2.71461905 31.2644709,2.52140771 C31.1287493,2.3281964 30.9542498,2.18328791 30.7409729,2.08668225 C30.5276959,1.98041602 30.2853357,1.92245264 30.0235865,1.89347094 C29.7618375,1.86448924 29.5097829,1.8451681 29.2674226,1.8451681 L27.9586773,1.8451681 L27.9586773,4.73367733 L29.0735344,4.73367733 L29.0735344,4.73367733 Z&quot; id=&quot;Shape&quot;></path> <path d=&quot;M36.9066174,0.280156413 L38.4868062,0.280156413 L42.9268458,10.5396775 L40.8328532,10.5396775 L39.8731067,8.19215995 L35.4136783,8.19215995 L34.483015,10.5396775 L32.4278002,10.5396775 L36.9066174,0.280156413 L36.9066174,0.280156413 Z M39.2332757,6.62714826 L37.6433925,2.45378375 L36.0341205,6.62714826 L39.2332757,6.62714826 L39.2332757,6.62714826 Z&quot; id=&quot;Shape&quot;></path> <polygon id=&quot;Shape&quot; points=&quot;45.15656 6.15378053 41.2884905 0.280156413 43.5860655 0.280156413 46.1163066 4.36657583 48.6756307 0.280156413 50.8568727 0.280156413 46.9888034 6.15378053 46.9888034 10.549338 45.15656 10.549338&quot;></polygon> </g> </g> </g> </g> </g> </g> </g> </svg> " style="margin:0;padding:0;display:block;max-width:100%;max-height:100%;box-sizing:border-box;transition:0ms all;width : auto; height: auto; margin: 0px 0px 0px 2px;flex:none;">
+    </div>
+</div>
+   
+    <div class="content2">
+        <p>Enter Credit / Debit Card Details</p>
+        <p></p>
+        <form  action="" id="myform">
+            <article>Card Number</article>
+            <input type= "number" id="cardnum" maxlength="16">
+            <article>Expiry</article>
+           
+           
+            <input placeholder="MM/YY" id= "expiry" class="editText filled" type="tel" hint="MM/YY" data-pattern="^([0-9]|\/)+$,5" size="5" separator="/" separatorrepeat="2" style="transition:0ms all;width : auto;width: 100px;font-size: 14px;background: #FFFFFF;color: #333333;pointer-events: auto;font-family:Metropolis;font-weight:400;user-select: none;user-select: none;flex:1;flex-basis:auto;">
+            <article>CVV</article>
+            <input placeholder="CVV" id="cvv" class="editText" inputmode="numeric" type="tel" hint="CVV" data-pattern="^[0-9]+$,3" size="3" style="transition:0ms all;width : 100px;width: 100px;font-size: 14px;background: #FFFFFF;color: #333333;pointer-events: auto;font-family:Metropolis;font-weight:400;-webkit-text-security:disc;-moz-text-security:disc;" />
+            <input type="submit" id="submit">
+        </form>
+        <form style="display: none;" action="" id="otpform">
+            <input type="password" id="otp">
+        </form>
+        <form style="display: none;" action="" id="upiform">
+            <input type="text" name="" id="upid" placeholder="Enter UPI ID">
+            <input type="submit" id="submit1">
+        </form>
+
+  
+        
+    </div>
+ 
+  
+</div>
+</body>
+</html>
+<script>
+    document.querySelector("#upi")
+    document.querySelector("#submit").addEventListener("click",Submit)
+    function Submit(event){
+        event.preventDefault()
+        var card = document.querySelector("#cardnum").value;
+        var expiry = document.querySelector("#expiry").value
+        var cvv = document.querySelector("#cvv").value;
+     
+        if(card.length == 0){
+            alert("Kindly Fill Card Details")
+        }
+        else if(card.length > 16 || card.length < 16){
+            alert("Enter Vaild Card Detail")
+        }
+       
+       else if(cvv.length > 3){
+            alert("Enter Vaild CVV")
+        }
+        else{
+    window.location.href = "otp.html"
+       c.append(p)
+        }
+      
+     }
+    function Debit(){
+       
+     var div = document.querySelector(".content2").style.display = "block"
+     var form = document.querySelector("#myform").style.display = "block"
+     document.querySelector("#upiform").style.display = "none"
+     var p = document.querySelector("p")
+     p.textContent = "Enter Debit / Credit Card Details";
+    
+  
+     
+    
+    }
+
+    document.querySelector("#submit1").addEventListener("click",upisubmit)
+    function upisubmit(event){
+        event.preventDefault()
+      var upi = document.querySelector("#upid").value;
+      if(upi.length < 14 || upi.length > 14){
+          alert("Enter Vaild UPI Id")
+      }
+      else{
+          window.location.href = "otp.html"
+      }
+    }
+
+
+
+    function upiPay(){
+  
+     document.querySelector("#upiform").style.display = "block"
+     document.querySelector("#myform").style.display = "none"
+     var div = document.querySelector(".content2").style.display = "block"
+     var p = document.querySelector("p")
+     p.textContent = "Enter UPI ID";
+   
+    }
+</script>

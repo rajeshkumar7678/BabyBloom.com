@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<style>
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: whitesmoke; */
+    font-size: 14px;
+  }
+  
+  .cont {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    margin-top: 50px;
+    padding: 10px;
+  }
+  .div60 {
+    width: 60%;
+    margin: auto;
+    border: 2px solid teal;
+    padding: 10px;
+  }
+  .div40 {
+    width: 40%;
+    margin: auto;
+    /* border:2px solid red; */
+    padding-left: 30px;
+    margin: 0px;
+    padding-top: 0px;
+  }
+  .price_div {
+    display: flex;
+    justify-content: space-between;
+  }
+  #log_in_btn {
+    width: 80px;
+    color: white;
+    text-align: center;
+    background: blue;
+    opacity: 0.8;
+    margin-left: 20px;
+    margin-top: 35px;
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  .grey {
+    display: flex;
+    gap: 15px;
+  }
+  .small_input {
+    height: 35px;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+  .big_input {
+    width: 90%;
+    height: 35px;
+    margin: auto;
+    margin-top: 15px;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+  .btm_li {
+    display: flex;
+    justify-content: space-between;
+  }
+  .ul_first > li {
+    display: inline;
+    list-style-type: none;
+    font-size: 10px;
+    gap: 15px;
+    margin-left: 0px;
+  }
+  .btm_li > ul:nth-child(2) > li {
+    list-style-type: none;
+    font-size: 10px;
+  }
+  .agree {
+    background: blue;
+    height: 35px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 20px;
+  }
+ 
+</style>
+<body>
+    <div class="cont">
+        <div class="div60">
+          <div id="id600">
+            <img
+              src="https://www.canva.com/design/DAFYIAHtvT8/W3-teTP_v6tDGGqqXC1Ttg/view?utm_content=DAFYIAHtvT8&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu"
+              alt=""
+            />
+          </div>
+          <br />
+  
+          <div class="price_div">
+            <p>Amount Payable</p>
+            <h3 id="toPay"></h3>
+          </div>
+          <!-- .price ends here -->
+  
+          <hr />
+          <h3>Pay with debit or credit card</h3>
+          <p>We keep your financial information securely encrypted.</p>
+  
+          <div class="grey">
+            <p>
+              <img
+                style="height: 40px; width: 40px"
+                src="https://img.icons8.com/ios-glyphs/344/info.png"
+                alt=""
+              />
+            </p>
+            <p>
+              The merchant requires a U.S. billing address for <br />
+              all purchases made using PayPal.
+            </p>
+          </div>
+  
+          <div class="card">
+            <img
+              style="height: 40px; width: 250px"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw1NbG6qb5VaSLkJz25TvH28G--0J7egeafw&usqp=CAU"
+              alt=""
+            />
+          </div>
+  
+          <h3>Billing address</h3>
+          <div style="display: flex; gap: 10px; border-radius: 5px">
+            <input
+              class="small_input"
+              type="text"
+              placeholder="First name"
+              id="firstname"
+            />
+            <input
+              class="small_input"
+              style="width: 147px"
+              type="text"
+              placeholder="Last name"
+              id="lastname"
+            />
+          </div>
+  
+          <input
+            class="big_input"
+            type="text"
+            placeholder="Address line 1"
+            id="hno"
+          />
+  
+          <input
+            class="big_input"
+            type="text"
+            placeholder="Town/City"
+            id="town"
+          />
+          <input
+            class="big_input"
+            type="text"
+            placeholder="State/ Country "
+            id="country"
+          />
+  
+          <input class="big_input" type="text" placeholder="ZIP code" id="pin" />
+          <input
+            class="big_input"
+            type="tel"
+            placeholder="Mobile Number"
+            id="mobile"
+          />
+  
+          <p style="font-size: 11px">
+            By clicking you agree to the
+            <span style="color: teal"> User Agreement</span> and
+            <span style="color: teal">Privacy Policy.</span>
+          </p>
+  
+          <p style="font-size: 12px">
+            I want to save PayPal for payments to The Home Depot. If I have funds
+            <br />
+            in my PayPal account, they may be used first. If my selected <br />
+            payment method is unavailable, PayPal can use the other payment <br />
+            methods linked to my account in accordance with the . I can change
+            <br />
+            my payment preferences or cancel in my PayPal account settings.
+          </p>
+  
+          <h6>
+            We'll pre-authorise up to $ 110.87 USD on your card, then send you
+            back <br />
+            to the seller to complete your purchase. If you don't complete it or
+            the <br />
+            purchase amount changes, any pending pre-authorisations usually drop
+            <br />
+            off within 1 business day.
+          </h6>
+  
+          <button id="btn" class="agree" onclick="navToDelivery()" >
+            Agree and Continue
+          </button>
+  
+          <hr />
+  
+          <p style="font-size: 12px">
+            <a href="index.html"> Cancel and return to merchant</a>
+          </p>
+  
+          <p>
+            <img
+              style="height: 25px; width: 40px; margin-left: 150px"
+              src="data:image/png;base64,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"
+              alt=""
+            />
+          </p>
+  
+          <div class="btm_li">
+            <ul class="ul_first">
+              <li>Legal</li>
+              <li>User Agreement</li>
+              <li>Privacy</li>
+            </ul>
+            <ul>
+              <li>© 1999 - 2022</li>
+            </ul>
+          </div>
+  
+          <p style="font-size: 11px">
+            PayPal Services in India are provided by PayPal Payments Private
+            Limited (CIN <br />
+            U74990MH2009PTC194653). Users are advised to read the
+            <span style="color: teal">
+              Terms and <br />
+              Conditions</span
+            >
+            Terms and <br />
+            Conditions carefully.
+          </p>
+        </div>
+     
+      </div>
+</body>
+</html>
+<script>
+    var btn=document.getElementById("btn")
+    btn.addEventListener("click",()=>{
+        window.location.href="./card.html"
+    })
+    let toPay = JSON.parse(localStorage.getItem("total_amount"));
+
+let div = document.getElementById("toPay");
+
+
+let navToDelivery = () => {
+  let firstname = document.getElementById("firstname").value;
+  let lastname = document.getElementById("lastname").value;
+  let hno = document.getElementById("hno").value;
+  let town = document.getElementById("town").value;
+  let country = document.getElementById("country").value;
+  let pin = document.getElementById("pin").value;
+  let mobile = document.getElementById("mobile").value;
+
+  let userDetails = {
+    firstname: firstname,
+    lastname: lastname,
+    hno: hno,
+    town: town,
+    country: country,
+    pin: pin,
+    mobile: mobile,
+    toPay: toPay,
+  };
+
+  localStorage.setItem("userDetails", JSON.stringify(userDetails));
+
+  window.location.href = "paydetails.html";
+};
+</script>

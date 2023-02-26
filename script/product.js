@@ -10,15 +10,16 @@ function fetchdata(){
         
     };
     
-    fetch("https://v1.nocodeapi.com/rajeshkumargzb275/google_sheets/JmsNXQGQkkHiKPHJ?tabId=Sheet1", requestOptions)
+    fetch("https://v1.nocodeapi.com/mrrajeshkumar767/google_sheets/wpTjRmHeRCQmufAy?tabId=Sheet1", requestOptions)
         .then(response => response.json())
-        .then((result) =>{
-            console.log(result.data)
+        .then(result =>{
+            //console.log(result.data)
             display(result.data)
             data1=result.data
         })
         .catch(error => console.log('error', error));
 }
+
 
 
 fetchdata()

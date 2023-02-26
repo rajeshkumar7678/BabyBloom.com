@@ -1,4 +1,5 @@
 let data=JSON.parse(localStorage.getItem("singleitem"))
+let arr=JSON.parse(localStorage.getItem("catrdata"))||[]
 console.log(data)
 var img1=document.getElementById("image1")
 img1.setAttribute("src",data[0].image1)
@@ -28,9 +29,12 @@ pri.innerText=data[0].price
 
 var btn1=document.getElementById("AddtoBag")
 btn1.addEventListener("click",()=>{
-  localStorage.setItem("catrdata",JSON.stringify(data))
-  alert("product added to bag")
-  
+let obj=data[0]
+obj.quantity=1
+arr.push(obj) 
+console.log(arr) 
+localStorage.setItem("catrdata",JSON.stringify(arr))
+     
 })
 
 var btn2=document.getElementById("gotoBag")

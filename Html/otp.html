@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        .content2 input{
+          margin-top: 1%;
+          margin-bottom: 2%;
+          height: 40px;
+          width: 400px;
+          border-radius: 5%;
+          margin-left: 5%;
+          display: block;
+          margin: auto;
+      }
+
+      .content2{
+       
+       height: 600px;
+       width: 70%;
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+       font-size: 20px;
+       margin: auto;
+       margin-top: 15%;
+       
+   }
+      #submit{
+      display: block;
+      width: 10%;
+      background-color: #FF7B73;
+      color: white;
+      border: none;
+      font-size: 20px;
+      margin-top: 1%;
+  }
+  h5{
+      margin-left: 44%;
+  }
+  p{
+    margin-left: 43.5%;
+      
+  }
+    </style>
+</head>
+<body>
+    <div class="content2">
+      
+    <form action="" id="otpform">
+        <h5>Please Enter OTP</h5>
+        <input type="password" name="" id="otp" placeholder="Enter OTP">
+        <input type="submit" id="submit">
+        <p></p>
+    </form>
+</div>
+</body>
+</html>
+<script>
+    // var submit=document.getElementById("submit")
+    // submit.addEventListener("click",()=>{
+    //     window.location.href="./success.html"
+    // })
+document.querySelector("#submit").addEventListener("click",submit)
+function submit(event){
+    event.preventDefault()
+    var otp = document.querySelector("#otp").value;
+    n = Number(otp)
+    for(var i = 0; i<n; i++){
+    if(n == 123){
+    var p = document.querySelector("p")
+    p.textContent = "You entered correct otp"
+    p.style.color = "green"
+      window.location.href="./success.html"
+
+    }
+    else{
+        var p = document.querySelector("p")
+        p.textContent = "Enter Vaild OTP"
+        p.style.color = "red"
+    }
+}
+}
+
+
+</script>
