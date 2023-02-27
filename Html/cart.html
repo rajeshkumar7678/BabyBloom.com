@@ -1,212 +1,246 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <title>Order Page</title>
-   <link rel="stylesheet" href="/css/cart.css">
-   <style>
-    #proceed{
-        text-align: end;
-        margin-right: 50px;
-    }
-    #proceed button{
-        width: 200px;
-        height: 40px;
-        background-color: rgb(142, 142, 238);
-        font-size: 18px;
-    }
-   </style>
-  </head>
-  <body>
-   <!-- nav bar -->
-   <div class="sticky">
-    <div class="header">
-        <div class="web">
-            <a href="#">
-                <img src="/image/WhatsApp Image 2023-02-20 at 23.20.59.jpg" alt="logo">
-            </a>
-        </div>
-        <div class="search-div">
-            <input type="text" placeholder="Search for a Category, Brand or Product" />
-            <img id="searchpng" src="https://image.flaticon.com/icons/png/128/49/49116.png" alt="" />
-        </div>
+    <link rel="stylesheet" href="/css/cart.css">
+    <style>
+        #proceed {
+            text-align: end;
+            margin-right: 50px;
+        }
 
-        <div id=short-links>
-            <div class="location">
-                <a href="location.html"><span>Select location</span></a>
-            </div>
-            <div class="Preschools">
-                <span>Stores & Preschools</span>
-            </div>
-            <div class="Support">
-                <span>Support</span>
-            </div>
-            <div class="Trackorder">
-                <span>Track Order</span>
-            </div>
-            <div class="parenting">
-                <span>Firstcry Parenting</span>
-            </div>
-            <div class="my-account">
-               <a href="./Html/login.html"><span>Login/Register</span></a>
-            </div>
-            <div class="shortlist">
-                <img src="https://www.svgrepo.com/show/14970/heart.svg" class="svg" alt=""> Shortlist
-            </div>
-            <div>
-                <a href="./Html/cart.html"><img src="https://www.svgrepo.com/show/11541/shopping-cart.svg" class="cart" alt=""></a>
-            </div>
+        #proceed button {
+            width: 200px;
+            height: 40px;
+            border: none;
+            background-color: #ff7043;
+            cursor: pointer;
+            font-size: 18px;
 
- 
-        </div>
-    </div>
+        }
+
+        #total {
+            /* border: 3px solid rgb(101, 14, 14); */
+            text-align: center;
+            font-weight: 600;
+            margin: 2rem;
+            padding: .7rem;
+        }
+
+        button {
+            /* border: 3px solid darkblue; */
+            padding: .5rem;
+            margin: 1rem;
+            font-weight: 600;
+            font-size: 1.3rem;
+            border: none;
+            background-color: #ff7043;
+            cursor: pointer;
+            color: white;
+        }
+
+        .Products {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            margin: auto;
+            margin-left: 3rem;
+        }
+    </style>
+</head>
+
+<body>
     <!-- nav bar -->
-    <div class="category">
-        <div class="all-cat">
-            <a href="./Html/product.html">ALL CATOGORIES</a>
+    <div class="sticky">
+        <div class="header">
+            <div class="web">
+                <a href="#">
+                    <img src="/image/WhatsApp Image 2023-02-20 at 23.20.59.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="search-div">
+                <input type="text" placeholder="Search for a Category, Brand or Product" />
+                <img id="searchpng" src="https://image.flaticon.com/icons/png/128/49/49116.png" alt="" />
+            </div>
+
+            <div id=short-links>
+                <div class="location">
+                    <a href="location.html"><span>Select location</span></a>
+                </div>
+                <div class="Preschools">
+                    <span>Stores & Preschools</span>
+                </div>
+                <div class="Support">
+                    <span>Support</span>
+                </div>
+                <div class="Trackorder">
+                    <span>Track Order</span>
+                </div>
+                <div class="parenting">
+                    <span>Firstcry Parenting</span>
+                </div>
+                <div class="my-account">
+                    <a href="./Html/login.html"><span>Login/Register</span></a>
+                </div>
+                <div class="shortlist">
+                    <img src="https://www.svgrepo.com/show/14970/heart.svg" class="svg" alt=""> Shortlist
+                </div>
+                <div>
+                    <a href="./Html/cart.html"><img src="https://www.svgrepo.com/show/11541/shopping-cart.svg"
+                            class="cart" alt=""></a>
+                </div>
+
+
+            </div>
         </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">BOY FASHION</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">GIRL FASHION</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">FOOTWEAR</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">TOYS</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">DIAPERING</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">GEAR</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">FEEDING</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">BATH & SKIN</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">NURSERY</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">MOMS</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">HEALTHY & SAFETY</a>
-        </div>
-        <div class="all-cat-1">
-            <a href="./Html/product.html">BOUTIQUES</a>
-        </div>
-        <div class="all-cat-1 blue">
-            <a href="./Html/product.html">Carter's</a>
+        <!-- nav bar -->
+        <div class="category">
+            <div class="all-cat">
+                <a href="./Html/product.html">ALL CATOGORIES</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">BOY FASHION</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">GIRL FASHION</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">FOOTWEAR</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">TOYS</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">DIAPERING</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">GEAR</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">FEEDING</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">BATH & SKIN</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">NURSERY</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">MOMS</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">HEALTHY & SAFETY</a>
+            </div>
+            <div class="all-cat-1">
+                <a href="./Html/product.html">BOUTIQUES</a>
+            </div>
+            <div class="all-cat-1 blue">
+                <a href="./Html/product.html">Carter's</a>
+            </div>
         </div>
     </div>
-</div>
     <div class="nav">
-      <h1>Your Cart Items </h1>
-      
+        <h1>Your Cart Items </h1>
+
     </div>
     <div id="proceed">
-        <button>Proceed to Pay</button>
+        <button>Proceed To Pay</button>
 
     </div>
-    
+
     <h1 id="total">
         Your Total Cart Items Price = <span id="order-total">0</span>
-      </h1>
+    </h1>
     <div id="order-container">
-      <!-- Here Append All the Order Cards here-->
+        <!-- Here Append All the Order Cards here-->
     </div>
-  </body>
-  <script>
-    var proceed=document.getElementById("proceed")
-    proceed.addEventListener("click",()=>{
+</body>
+<script>
+    var proceed = document.getElementById("proceed")
+    proceed.addEventListener("click", () => {
         console.log(total_sum)
-        localStorage.setItem("total_amount",JSON.stringify(total_sum))
-        window.location.href="./paydetails.html"
+        localStorage.setItem("total_amount", JSON.stringify(total_sum))
+        window.location.href = "./paydetails.html"
     })
-    var quant=0;
-    let ordercont=document.getElementById("order-container")
-    var total_sum=document.getElementById("order-total")
-     var narray=JSON.parse(localStorage.getItem("catrdata"))
-    if(narray===null){
-      narray=[]
-    
+    var quant = 0;
+    let ordercont = document.getElementById("order-container")
+    var total_sum = document.getElementById("order-total")
+    var narray = JSON.parse(localStorage.getItem("catrdata"))
+    if (narray === null) {
+        narray = []
+
     }
     Display(narray)
     // console.log(narray)
-    function Display(narray){
-      narray.forEach((element)=>{
-
-      
-   let div=document.createElement("div")
-    
-   let title=document.createElement("h3")
-   title.innerText=element.name
-
-   let image=document.createElement("img")
-   image.setAttribute("src",element.image1)
-  //  console.log(image)
-  let desc=document.createElement("p")
-  desc.innerText=element.description
-  // console.log(desc)
-  let price=document.createElement("h4")
-  price.innerText=element.price
-  let btn=document.createElement("button")
-  btn.innerText="cancel"
+    function Display(narray) {
+        narray.forEach((element) => {
 
 
-  quant=quant+ element.price
-  console.log(quant)
-  var arr=[]
-  arr.push(element)
-  var count=1
-  var btn2=document.createElement("button")
-  btn2.innerText="quantity+"
-  btn2.addEventListener("click",()=>{
-    count++
-    Quantity.innerText=count
-    total_sum.innerText=quant+(count-1)*
-    (element.price)
+            let div = document.createElement("div")
+            div.setAttribute("class", "Products")
 
-  })
-  
-  var btn3=document.createElement("button")
-  btn3.innerText="quantity-"
-  btn3.addEventListener("click",()=>{
-    count--
-    var min_quant=Quantity.innerText-count
-    Quantity.innerText=count
-    total_sum.innerText=(total_sum.innerText)-(min_quant*element.price)
-  })
-  var Quantity=document.createElement("h5")
-  Quantity.innerText=count
+            let title = document.createElement("h3")
+            title.innerText = element.name
 
- 
+            let image = document.createElement("img")
+            image.setAttribute("src", element.image1)
+            //  console.log(image)
+            let desc = document.createElement("p")
+            desc.innerText = element.description
+            // console.log(desc)
+            let price = document.createElement("h2")
+            price.innerText = element.price
+            let btn = document.createElement("button")
+            btn.innerText = "cancel"
 
-  div.append(image,title,desc,price,btn2,btn3,Quantity)
-  ordercont.append(div)
 
-  
-})
-}
-// console.log(quant)
-var total=document.getElementById("order-total")
-      var sum=0
-      narray.forEach((element)=>{
-        sum+=Number(element.price)
-      })
-  
-      total_sum.innerText=sum
-   
-  </script>
+            quant = quant + element.price
+            console.log(quant)
+            var arr = []
+            arr.push(element)
+            var count = 1
+            var btn2 = document.createElement("button")
+            btn2.innerText = "Quantity+"
+            btn2.addEventListener("click", () => {
+                count++
+                Quantity.innerText = count
+                total_sum.innerText = quant + (count - 1) *
+                    (element.price)
+
+            })
+
+            var btn3 = document.createElement("button")
+            btn3.innerText = "Quantity-"
+
+            btn3.addEventListener("click", () => {
+                count--
+                var min_quant = Quantity.innerText - count
+                Quantity.innerText = count
+                total_sum.innerText = (total_sum.innerText) - (min_quant * element.price)
+            })
+            var Quantity = document.createElement("h5")
+            Quantity.innerText = count
+
+
+
+            div.append(image, title, desc, price, btn2, Quantity, btn3,)
+            ordercont.append(div)
+
+
+        })
+    }
+    // console.log(quant)
+    var total = document.getElementById("order-total")
+    var sum = 0
+    narray.forEach((element) => {
+        sum += Number(element.price)
+    })
+
+    total_sum.innerText = sum
+
+</script>
+
 </html>
-
