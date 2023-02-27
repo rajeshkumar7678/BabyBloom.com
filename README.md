@@ -86,7 +86,7 @@ For Frontend : HTML5, CSS3, Javascript, ES6.
 ![App Screenshot]()
 ![App Screenshot]()
 ---
-⭐Deployed Link:-
+⭐Deployed Link:- https://jade-medovik-0d0bfb.netlify.app/
 
 
 ----
