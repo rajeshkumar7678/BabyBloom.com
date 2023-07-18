@@ -1,22 +1,40 @@
-function checkcredentials() {
-    console.log("Shashwat")
+const baseurl="https://babybloom.onrender.com/"
 
+function checkcredentials() {
     let email = document.getElementById("email").value;
 
     let password = document.getElementById("password").value;
 
-    console.log(email, password);
-
-    let arr = JSON.parse(localStorage.getItem("login-details"));
-
-    for (var i = 0; i < arr.length; i++) {
-
-        if (arr[i].email === email && arr[i].password === password || arr[i].mobile == email && arr[i].password == password) {
-            window.location.href = "../index.html"
-            return
-
-        }
+    let obj={
+        email,
+        password
     }
-    alert("invalid credentials");
+
+    console.log(obj)
+
+    fetch(`${baseurl}user/login`,{
+        method:"POST",
+        headers:{
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(obj)
+    })
+    .then((res)=>{
+        return res.json()
+    })
+    .then((data)=>{
+        alert(data.msg)
+        if(data.token){
+            localStorage.setItem("userdetails",JSON.stringify(data))
+            window.location.href="product.html"
+        }
+        console.log(data)
+        
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
+
+    
 
 }

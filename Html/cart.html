@@ -39,15 +39,40 @@
             font-weight: 600;
             font-size: 1.3rem;
             border: none;
-            background-color: #ff7043;
+            background-color: #f8420a;
             cursor: pointer;
             color: white;
+            border-radius: 15px;
+        }
+
+        button:hover{
+            
+            color: black;
         }
 
         .Products {
             box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
             margin: auto;
+            padding: 10px;
             margin-left: 3rem;
+            border-radius: 15px;
+        }
+        .Products > img{
+            margin: auto;
+            border: 2px solid rebeccapurple;
+            border-radius: 50%;
+        }
+        .nav{
+            display: flex;
+            justify-content:space-around;
+            align-items: baseline;
+            
+        }
+        .buttondiv{
+           
+            display: flex;
+            justify-content:space-around;
+            align-items: baseline;
         }
     </style>
 </head>
@@ -144,12 +169,12 @@
     </div>
     <div class="nav">
         <h1>Your Cart Items </h1>
-
+        <div id="proceed">
+            <button>Proceed To Pay</button>
+    
+        </div>
     </div>
-    <div id="proceed">
-        <button>Proceed To Pay</button>
-
-    </div>
+   
 
     <h1 id="total">
         Your Total Cart Items Price = <span id="order-total">0</span>
@@ -176,9 +201,9 @@
     Display(narray)
     // console.log(narray)
     function Display(narray) {
-        narray.forEach((element) => {
-
-
+        ordercont.innerHTML=""
+        narray.forEach((element,index) => {
+            
             let div = document.createElement("div")
             div.setAttribute("class", "Products")
 
@@ -193,6 +218,10 @@
             // console.log(desc)
             let price = document.createElement("h2")
             price.innerText = element.price
+
+            let buttondiv = document.createElement("div")
+            buttondiv.setAttribute("class", "buttondiv")
+
             let btn = document.createElement("button")
             btn.innerText = "cancel"
 
@@ -216,17 +245,20 @@
             btn3.innerText = "Quantity-"
 
             btn3.addEventListener("click", () => {
-                count--
+                if(count>0){
+                    count--
                 var min_quant = Quantity.innerText - count
                 Quantity.innerText = count
                 total_sum.innerText = (total_sum.innerText) - (min_quant * element.price)
+                }
+                
             })
             var Quantity = document.createElement("h5")
             Quantity.innerText = count
 
 
-
-            div.append(image, title, desc, price, btn2, Quantity, btn3,)
+            buttondiv.append(btn2,Quantity,btn3)
+            div.append(image, title, desc, price, buttondiv)
             ordercont.append(div)
 
 

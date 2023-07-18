@@ -1,21 +1,15 @@
+const baseurl="https://babybloom.onrender.com/"
+
+
 var main1=document.getElementById("product")
 var data1;
 function fetchdata(){
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    var requestOptions = {
-        method: "get",
-        headers: myHeaders,
-        redirect: "follow",
-        
-    };
-    
-    fetch("https://v1.nocodeapi.com/mrrajeshkumar767/google_sheets/wpTjRmHeRCQmufAy?tabId=Sheet1", requestOptions)
+    fetch(`${baseurl}product/`)
         .then(response => response.json())
         .then(result =>{
-            //console.log(result.data)
-            display(result.data)
-            data1=result.data
+            //console.log(result.products)
+            display(result.products)
+            data1=result.products
         })
         .catch(error => console.log('error', error));
 }

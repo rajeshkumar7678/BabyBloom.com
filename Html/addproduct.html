@@ -135,7 +135,7 @@
          
     </nav>
     <marquee behavior="" scrollamount="10"> <h2>Please Fill Product Details ...</h2></marquee>
-    <form method="post" name="google-sheet">
+    <form  name="google-sheet">
       <input
         type="text"
         name="Title"
@@ -233,44 +233,52 @@
       <button type="submit" id="btn" name="submit">ADD to SITE</button>
     </form>
   </body>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
   
   <script>
+    const baseurl="https://babybloom.onrender.com"
+
+    const userdetails=JSON.parse(localStorage.getItem("userdetails"))
+    console.log(userdetails)
     const form = document.forms["google-sheet"];
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (
-        form.name.value != "" &&
-        form.price.value != "" &&
-        form.color.value != "" &&
-        form.img1.value != "" &&
-        form.img2.value != "" &&
-        form.img3.value != "" &&
-        form.img4.value != "" &&
-        form.main.value != "" &&
-        form.sub.value != "" &&
-        form.des.value != ""
-      ) {
-        
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        var requestOptions = {
-        method: "post",
-        headers: myHeaders,
-        redirect: "follow",
-        body: JSON.stringify([[form.name.value, form.price.value, form.color.value, form.img1.value, form.img2.value, form.img3.value, form.img4.value, form.main.value, form.sub.value, form.des.value]])
-        };
-
-        fetch("https://v1.nocodeapi.com/rajeshkumargzb275/google_sheets/JmsNXQGQkkHiKPHJ?tabId=Sheet1", requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-        swal("Product added to Site...");
-        }else {
-        swal("Please Provide Complete Information....!");
+      let obj={
+        name:form.name.value ,
+        price:form.price.value ,
+        color:form.color.value ,
+        image1:form.img1.value ,
+        image2:form.img2.value ,
+        image3:form.img3.value ,
+        image4:form.img4.value ,
+        maincat:form.main.value ,
+        subcat:form.sub.value ,
+        description:form.des.value 
       }
-      
-    });
+      console.log(obj)
+
+      fetch(`${baseurl}/product/add`,{
+        method:"POST",
+        headers:{
+          "token":userdetails.token,
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(obj)
+        })
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            console.log(data)
+            alert(data.msg)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+})
+        
+        
+        
    
   </script>
 </html>

@@ -36,19 +36,19 @@
         <div class="big-text">Register</div>
         <div class="big-text small">Full Name</div>
         <div>
-            <input class="big-text small inp" id="name" type="text" placeholder="Enter your Full Name">
+            <input class="big-text small inp" id="name" type="text" placeholder="Enter your Full Name" required>
         </div>
         <div class="big-text small">Mobile Number</div>
         <div>
-            <input class="big-text small inp" id="mobile" type="text" placeholder="Enter your Mobile Number">
+            <input class="big-text small inp" id="mobile" type="text" placeholder="Enter your Mobile Number" required>
         </div>
         <div class="big-text small">Email ID</div>
         <div>
-            <input class="big-text small inp" id="email" type="text" placeholder="Enter your Email ID">
+            <input class="big-text small inp" id="email" type="text" placeholder="Enter your Email ID" required>
         </div>
         <div class="big-text small">Password</div>
         <div>
-            <input class="big-text small inp" id="password" type="password" placeholder="Enter your Password">
+            <input class="big-text small inp" id="password" type="password" placeholder="Enter your Password" required>
         </div>
         <div id="btn">
             <button class="big-text small" onclick="storeDetails()">CONTINUE</button>
@@ -56,48 +56,5 @@
 
     </div>
 </body>
-
+<script src="../script/signin.js"></script>
 </html>
-<script>
-
-
-    function storeDetails() {
-        let name = document.getElementById("name").value;
-        let mobile = document.getElementById("mobile").value;
-        let email = document.getElementById("email").value;
-        let password = document.getElementById("password").value;
-
-        if (name.length == 0 || mobile.length == 0 || email.length == 0 || password.length == 0) {
-            alert("please fill all the details");
-
-            return
-        }
-
-        window.location.href = "login.html";
-
-        let location = {
-            name,
-            mobile,
-            email,
-            password,
-        };
-
-        let arr = localStorage.getItem("login-details");
-
-        if (arr == null) {
-            arr = [];
-        }
-        else {
-            arr = JSON.parse(localStorage.getItem("login-details"));
-        }
-
-        arr.push(location);
-        localStorage.setItem("login-details", JSON.stringify(arr));
-
-        document.getElementById("name").value = null;
-        document.getElementById("mobile").value = null;
-        document.getElementById("email").value = null;
-        document.getElementById("password").value
-
-    }
-</script>

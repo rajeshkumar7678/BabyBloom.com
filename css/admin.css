@@ -64,12 +64,26 @@ body{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+
 .card img{
     width: 200px;
 }
 .btn{
+  
     margin: 10px 10px 10px 10px;
     display: flex;
     justify-content: space-between;
     
 }
+
+.btn > button{
+  width: 80px;
+  height: 30px;
+  border-radius:10px;
+  background-color: #ecdb83;
+}
+
+.btn > button:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+

@@ -1,4 +1,7 @@
 
+const baseurl="https://babybloom.onrender.com/"
+
+const userdetails=JSON.parse(localStorage.getItem("userdetails"))
 var main=document.getElementById("main1")
 var sortbyprice=document.getElementById("sortbyprice")
 var sortbycategory=document.getElementById("sortbycategory")
@@ -6,23 +9,15 @@ var data1;
 
 function fetchdata(){
 
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    var requestOptions = {
-        method: "get",
-        headers: myHeaders,
-        redirect: "follow",
-        
-    };
-    
-    fetch("https://v1.nocodeapi.com/mrrajeshkumar767/google_sheets/wpTjRmHeRCQmufAy?tabId=Sheet1", requestOptions)
+    fetch(`${baseurl}product/`)
         .then(response => response.json())
         .then(result =>{
-            //console.log(result.data)
-            display(result.data)
-            data1=result.data
+            //console.log(result.products)
+            display(result.products)
+            data1=result.products
         })
         .catch(error => console.log('error', error));
+
 }
 
 
@@ -46,16 +41,16 @@ function display(data){
        let btn=document.createElement("div")
        btn.setAttribute("class","btn")
 
-       var btn1=document.createElement("buttom");
+       var btn1=document.createElement("button");
        btn1.innerText="Update"
        btn1.addEventListener("click",()=>{
         updatedata(element)
        })
 
-       var btn2=document.createElement("buttom");
+       var btn2=document.createElement("button");
        btn2.innerText="delete"
        btn2.addEventListener("click",()=>{
-        deletedata(element.row_id)
+        deletedata(element._id)
         //console.log(element.row_id)
        })
 
@@ -75,21 +70,25 @@ function updatedata(element){
 }
 
 function deletedata(id){
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    var requestOptions = {
-        method: "delete",
-        headers: myHeaders,
-        redirect: "follow",
+    fetch(`${baseurl}product/delete/${id}`,{
+        method:"delete",
+        headers:{
+          "token":userdetails.token,
+            "content-type":"application/json"
+        }
         
-    };
-    
-    fetch(`https://v1.nocodeapi.com/mrrajeshkumar767/google_sheets/wpTjRmHeRCQmufAy?tabId=Sheet1&row_id=${id}`, requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
-
-        fetchdata()
+        })
+        .then((res)=>{
+            return res.json()
+        })
+        .then((data)=>{
+            console.log(data)
+            alert(data.msg)
+            fetchdata()
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
     
     
 }
