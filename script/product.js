@@ -7,12 +7,13 @@ function fetchdata(){
     fetch(`${baseurl}product/`)
         .then(response => response.json())
         .then(result =>{
-            //console.log(result.products)
+            console.log(result.products)
             display(result.products)
             data1=result.products
         })
         .catch(error => console.log('error', error));
 }
+
 
 
 
@@ -98,12 +99,13 @@ sortbycat.addEventListener("change",()=>{
         display(data1)
     }else{
     let filtered=data1.filter((ele)=>{
-        if(sortbycat.value==ele.maincat){
+        if(sortbycat.value==ele.maincat ){
             return true
         }else{
             return false
         }
     })
+    console.log(filtered)
     display(filtered)
     }
     
@@ -113,16 +115,14 @@ sortbycat.addEventListener("change",()=>{
  
 search.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
-    //   console.log("yes")
-    let search_filter=data1.filter((ele)=>{
-        if(search.value===ele.subcat){
-            // console.log("yes")
-            return true
-          }
-          else{
-            return false
-          }
-    })
+    
+    
+    const searchValue = search.value.toLowerCase(); 
+
+      let search_filter = data1.filter((ele) => {
+        const subcatLower = ele.subcat.toLowerCase(); 
+        return subcatLower.includes(searchValue);
+      });
     display(search_filter)
     }
     

@@ -1,3 +1,4 @@
+let user=JSON.parse(localStorage.getItem("userdetails"))
 let data = JSON.parse(localStorage.getItem("singleitem"))
 let arr = JSON.parse(localStorage.getItem("catrdata")) || []
 console.log(data)
@@ -29,26 +30,32 @@ pri.innerText = data[0].price
 
 var btn1 = document.getElementById("AddtoBag")
 btn1.addEventListener("click", () => {
-  let c=0
-  arr.forEach(element => {
-    if(data[0]._id==element._id){
-      c=1
-      
-    }
-      
-    
-  });
-  if(c==1){
-    alert("product already in cart")
+  if(!user){
+    alert("please login first")
   }else{
-      let obj = data[0]
-      obj.quantity = 1
-      arr.push(obj)
+    let c=0
+    arr.forEach(element => {
+      if(data[0]._id==element._id){
+        c=1
+        
+      }
+        
+      
+    });
+    if(c==1){
+      alert("product already in cart")
+    }else{
+        let obj = data[0]
+        obj.quantity = 1
+        arr.push(obj)
+  
+        console.log(arr)
+        localStorage.setItem("catrdata", JSON.stringify(arr))
+        alert("Product added successfully")
+    }
 
-      console.log(arr)
-      localStorage.setItem("catrdata", JSON.stringify(arr))
-      alert("Product added successfully")
   }
+
   
 })
 
